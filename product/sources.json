@@ -1,0 +1,77 @@
+{
+  "formatVersion": 1,
+  "reviewedOn": "2026-10-26",
+  "purpose": "Pinned candidates for selective source integration; entries are not installed or bundled components.",
+  "androidBase": {
+    "repository": "https://github.com/Gathin23/cleanyourtv",
+    "commit": "f592b6d2db0cfa0e28779660f25ff65386a5ff9b",
+    "prototypeCommit": "8509d07c47b4f05afe7ba19ee0fcd2bc915218c9",
+    "path": "launcher",
+    "license": "MIT"
+  },
+  "candidates": [
+    {
+      "name": "LG webOS no-root implementation",
+      "repository": "https://github.com/Razdva122/clean-your-tv-lg-webos",
+      "commit": "d5804f6a7ce5d4eb35c0093ca19ae011e5a6df7f",
+      "guide": "https://github.com/Razdva122/clean-your-tv-lg-webos/blob/d5804f6a7ce5d4eb35c0093ca19ae011e5a6df7f/docs/COMPATIBILITY.md",
+      "licenseFile": "LICENSE",
+      "license": "MIT; fonts, bundled dependencies and desktop Qt have additional notices",
+      "reuse": "launcher, no-root on-TV helper and Windows build/install design",
+      "status": "guides and licence reviewed; source/runtime integration pending",
+      "requiredBeforeImport": ["Review helper and recovery paths", "Retain THIRD_PARTY_NOTICES.md and transitive licences", "Identify owner LG models and firmware", "Keep root edition out of the default path"]
+    },
+    {
+      "name": "Home Styles",
+      "repository": "https://github.com/YuvrajSingh808/cleanyourtv",
+      "commit": "fdc18b3005ef936621a8bd821f922121dead1916",
+      "guide": "https://github.com/YuvrajSingh808/cleanyourtv/blob/fdc18b3005ef936621a8bd821f922121dead1916/FORK.md",
+      "licenseFile": "LICENSE",
+      "license": "MIT",
+      "reuse": "Aurora, Cinema and Orbit view architecture and deterministic navigation",
+      "status": "guide and licence reviewed; component source audit and port pending",
+      "requiredBeforeImport": ["Preserve app model and style-preview rollback", "Resolve library/reorder restrictions in alternate styles", "Test RTL and reduced motion", "Retain attribution"]
+    },
+    {
+      "name": "Local video and effects",
+      "repository": "https://github.com/csermet/cleanyourtv",
+      "commit": "18b03b2145c51c35fb255b1c6863ed609746ece6",
+      "guide": "https://github.com/csermet/cleanyourtv/blob/18b03b2145c51c35fb255b1c6863ed609746ece6/FORK.md",
+      "licenseFile": "LICENSE",
+      "license": "MIT",
+      "reuse": "LiveVideo lifecycle, silent playback and still fallback",
+      "status": "LiveVideo.java, guide and licence reviewed; port pending",
+      "requiredBeforeImport": ["Do not import night-mode settings grants or soundbar sounds", "Measure memory/decoder/CPU behavior on each Android device", "Verify actual streaming playback after leaving Home", "Keep animation optional"]
+    },
+    {
+      "name": "Offline theme packs",
+      "repository": "https://github.com/DipsySu/cleanyourtv",
+      "commit": "1c05b6b50cd8e5a1f9cff9f8914b1439f02a66f4",
+      "guide": "https://github.com/DipsySu/cleanyourtv/blob/1c05b6b50cd8e5a1f9cff9f8914b1439f02a66f4/docs/personal-themes.md",
+      "licenseFile": "LICENSE",
+      "license": "MIT code; themed artwork needs a separate licence review",
+      "reuse": "offline import, on-TV selection and preservation of manual settings",
+      "status": "guide and code licence reviewed; importer source audit pending",
+      "requiredBeforeImport": ["Do not bundle Nintendo artwork", "Validate imported resources and paths", "Test switching and interrupted imports without losing preferences"]
+    },
+    {
+      "name": "LiquiTvOs",
+      "repository": "https://github.com/purnavikas/cleanyourtv",
+      "commit": "3c7e84d27fd64506e1a90a5121cbd0d004b42ab0",
+      "guide": "https://github.com/purnavikas/cleanyourtv/blob/3c7e84d27fd64506e1a90a5121cbd0d004b42ab0/LIQUITVOS.md",
+      "licenseFile": "LICENSE",
+      "license": "MIT",
+      "reuse": "profile selector and quick-controls UI references",
+      "status": "guide, profile source excerpt and licence reviewed; port pending",
+      "requiredBeforeImport": ["Implement independent local profile data rather than only account selection", "Review photo and Bluetooth permissions separately", "Exclude personal photographs"]
+    },
+    {
+      "name": "Header Grid",
+      "repository": "https://github.com/OrenDdp/cleanyourtv-header-grid",
+      "commit": "703609369f2e5955e282b6cf687691e82801b7bf",
+      "guide": "https://github.com/OrenDdp/cleanyourtv-header-grid/blob/703609369f2e5955e282b6cf687691e82801b7bf/FORK.md",
+      "reuse": "double focus frame, spacing and whole-row navigation",
+      "status": "guide reviewed; licence and source verification pending before reuse"
+    }
+  ]
+}
