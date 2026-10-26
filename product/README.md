@@ -14,6 +14,7 @@ Android launcher lives in `launcher/`. The first webOS recovery patch/source lay
 - Native Android style preview, timed Revert and scoped Undo, inherited from the tested Sony prototype.
 - A shared profile format, desktop exporter and Android native profile picker with offline library import.
 - Bottom carousel with native focus/preview/Undo; bounded offline visual themes; optional silent local video.
+- Opt-in dual-contrast focus, per-profile extra spacing, global HDMI visibility and a remote TV-button picker.
 - A pinned, reproducible LG helper recovery patch with portable C and controller-protocol checks.
 - An integration roadmap and source/licence review register. Listed projects are candidates, not bundled apps.
 
@@ -21,6 +22,7 @@ This branch has not been installed on a TV. The existing Sony style-test install
 The Android additions are compiled and locally tested, not device accepted. The webOS runtime/profile
 adapter and hardware acceptance remain pending. See [Android profiles](ANDROID-PROFILES.md),
 [appearance integration](ANDROID-APPEARANCE.md) and [lightweight SHOWCASE candidates](SHOWCASE-LIGHTWEIGHT.md).
+Alpha 3 usability controls and their remaining native checks are described in [Android usability](ANDROID-USABILITY.md).
 
 ## Shared profiles: first working slice
 

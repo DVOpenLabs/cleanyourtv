@@ -11,10 +11,10 @@ their storage and decoder cost must be reported separately from installation siz
 
 | Candidate | User benefit | Likely cost / boundary | Recommendation |
 |---|---|---|---|
-| [Header Grid](https://github.com/OrenDdp/cleanyourtv-header-grid/blob/703609369f2e5955e282b6cf687691e82801b7bf/FORK.md): double focus frame | Selection stays legible on both bright and dark app banners | Small native drawing change; no intrinsic need for networking, media or a service | Highest priority next; inspect licence/drawing source, then test contrast on real banners |
-| Header Grid: exact gaps and whole-row navigation | Easier reading at a distance; predictable D-pad movement | Native geometry/settings, without a separate launcher | Good next increment; keep current spacing unless user changes it |
-| [HDMI input visibility](https://github.com/midhatn/cleanyourtv/tree/feature/hdmi-input-visibility) | Hide disconnected ports from the Inputs menu | Source filters the existing TvInputManager state through `HdmiVisibility`; firmware can misreport state | Good optional switch with Show all fallback; confirm CEC/unknown-state policy before porting |
-| [Remote Picker](https://github.com/lionlev21/cleanyourtv/blob/tv-button-picker/REMOTE_PICKER.md) | Choose what the TV button opens directly on the TV | Guide reuses existing key helpers; no new service/network permission, but accessibility is still needed for cross-app key handling | Useful opt-in settings row; never enable a helper through a theme or change mappings silently |
+| [Header Grid](https://github.com/OrenDdp/cleanyourtv-header-grid/blob/703609369f2e5955e282b6cf687691e82801b7bf/FORK.md): double focus frame | Selection stays legible on both bright and dark app banners | Small native drawing change; no intrinsic need for networking, media or a service | Frame source/licence reviewed and adapted in alpha 3; actual banner contrast remains to be tested |
+| Header Grid: exact gaps and whole-row navigation | Easier reading at a distance; predictable D-pad movement | Native geometry/settings, without a separate launcher | Alpha 3 adds independent extra gutters; whole-row navigation remains deferred |
+| [HDMI input visibility](https://github.com/midhatn/cleanyourtv/tree/feature/hdmi-input-visibility) | Hide disconnected ports from the Inputs menu | Source filters the existing TvInputManager state through `HdmiVisibility`; firmware can misreport state | Adapted in alpha 3 with Show all fallback; CEC/unknown rows retained; firmware acceptance pending |
+| [Remote Picker](https://github.com/lionlev21/cleanyourtv/blob/tv-button-picker/REMOTE_PICKER.md) | Choose what the TV button opens directly on the TV | Guide reuses existing key helpers; no new service/network permission, but accessibility is still needed for cross-app key handling | Restricted TV-key picker adapted in alpha 3; no auto-grants/helper activation; physical acceptance pending |
 | [XMB Home's simple Now Playing](https://github.com/amachador/xmb-home/blob/main/README.md) | Small indication that audio is still playing after returning Home | Guide explicitly has no notification access: no song titles, and app association is a guess based on the last opened app | Consider a generic audio-active indicator; do not label guessed app attribution as fact |
 | [Bluetooth pill](https://github.com/nikhiltalreja/cleanyourtv/blob/bluetooth-pill-key-remaps/README.md) | Quicker earbud pairing | Full scan/pair implementation requires BLUETOOTH_CONNECT / SCAN grants on applicable Android versions | Prefer a shortcut to the TV's own Bluetooth settings first; full scanner is optional later |
 
@@ -41,5 +41,7 @@ feeds, voice agents, notification metadata and full animated engines need a clea
 and runtime budget first. Do not merge proprietary Projectivy code or assume a SHOWCASE listing grants
 rights to redistribute its assets.
 
-My next recommendation is **focus contrast + consistent spacing**, followed by the optional input filter
-and TV-button picker. Those solve daily usability problems while fitting the existing native architecture.
+Alpha 3 implements **focus contrast + extra spacing**, followed by the optional input filter and TV-button
+picker. These source integrations remain off by default and need native/physical acceptance; no TV was
+changed. See [the usability contract](ANDROID-USABILITY.md). Whole-row navigation, the audio indicator
+and Bluetooth changes remain candidates rather than bundled features.

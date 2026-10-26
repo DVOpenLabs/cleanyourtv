@@ -93,8 +93,30 @@
       "repository": "https://github.com/OrenDdp/cleanyourtv-header-grid",
       "commit": "703609369f2e5955e282b6cf687691e82801b7bf",
       "guide": "https://github.com/OrenDdp/cleanyourtv-header-grid/blob/703609369f2e5955e282b6cf687691e82801b7bf/FORK.md",
-      "reuse": "double focus frame, spacing and whole-row navigation",
-      "status": "guide reviewed; licence and source verification pending before reuse"
+      "reuse": "Dual-contrast GlassView frame only; product extra-spacing geometry is independent",
+      "status": "Pinned frame source and licence reviewed; dual frame adapted without extra glow; release-built and parser tests pass; actual native banner contrast pending; whole-row navigation not imported",
+      "licenseFile": "LICENSE",
+      "license": "MIT"
+    },
+    {
+      "name": "HDMI input visibility",
+      "repository": "https://github.com/midhatn/cleanyourtv",
+      "commit": "eeda31c7029737286e74016e7b24a5882ea4deef",
+      "guide": "https://github.com/midhatn/cleanyourtv/tree/eeda31c7029737286e74016e7b24a5882ea4deef",
+      "licenseFile": "LICENSE",
+      "license": "MIT",
+      "reuse": "Bare-port HDMI state policy; product settings and Show all escape",
+      "status": "Pinned policy/MainActivity source and licence reviewed; adapted into product; JVM state cases pass; CEC/native popup/hotplug hardware acceptance pending"
+    },
+    {
+      "name": "Remote Picker",
+      "repository": "https://github.com/lionlev21/cleanyourtv",
+      "commit": "e412c5b2b4e0819598f5da96060c0d1bf8522526",
+      "guide": "https://github.com/lionlev21/cleanyourtv/blob/e412c5b2b4e0819598f5da96060c0d1bf8522526/REMOTE_PICKER.md",
+      "licenseFile": "LICENSE",
+      "license": "MIT",
+      "reuse": "Picker/press-gate design and app query/sorting; independent restricted controller and shared per-device delivery gate",
+      "status": "Pinned picker/controller/press/settings source and licence reviewed; restricted adaptation release-built; no extra services, watchers, receivers, grants or permissions; pure choice/gesture/save tests pass; physical remote/helper behavior pending"
     }
   ]
 }

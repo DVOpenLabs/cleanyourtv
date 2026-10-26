@@ -56,6 +56,10 @@ Other accepted values: `home_style` (`minimal`, `cinematic`, `tv_grid`, `easy_vi
 picker switch to be enabled. Unknown settings are rejected, including app lists, key mappings,
 permissions, helper flags and boot controls.
 
+Alpha 3 also accepts `glass_style` (`glass`, `rim`, `halo`, `double`) and `tile_gap` (0–32 extra dp).
+See [usability controls](ANDROID-USABILITY.md); these additions are visual-only and cannot enable
+the remote/input controls or write their global choices.
+
 This is a deliberately smaller format inspired by DipsySu's pack implementation, **not full compatibility
 with its richer packs**. Fonts, icons, banners, headers, scripts, remote URLs and bundled character
 artwork are excluded. Keep personal media outside the public repository and distribute only media you

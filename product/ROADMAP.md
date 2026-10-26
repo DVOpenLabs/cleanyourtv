@@ -27,6 +27,12 @@ Automatic on-TV Home handling, standby/wake and the recovery shortcut need model
 
 ## 3. Layouts, focus and shared appearance
 
+Alpha 3 adds optional dual-contrast outlines and extra gutters in the existing adapter. Global HDMI
+visibility and the TV-button chooser are also integrated without new services or permissions. Their
+source/persistence tests pass; real native rendering, physical remotes and firmware input behavior
+remain pending. See [Android usability](ANDROID-USABILITY.md). Whole-row navigation and other renderers
+remain research candidates, not imported features.
+
 The first native bottom carousel is implemented with the existing preview/Undo and adapter. Evaluate
 Home Styles' Aurora/Cinema/Orbit and Header Grid's focus/spacing implementation next. Preserve the
 existing native app model rather than importing whole competing launchers. The bottom carousel must
