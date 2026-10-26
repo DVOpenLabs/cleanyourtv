@@ -32,8 +32,10 @@ and wallpaper rotation state also use a separate file or preference name for eac
 
 Startup-app behavior and the revision counter remain global. A profile's Follow theme action does not
 clear the global startup-app choice. No settings are copied from another person during a switch.
-The global theme/media collection still supplies the available wallpapers. Installing a new theme retains
-the reference launcher's existing theme-reset behavior; a future theme library needs its own migration tests.
+The original external theme still supplies wallpapers when no offline pack is selected. Alpha 2 adds
+per-profile offline pack selection and a silent-video toggle. Library selection preserves manual
+choices; an explicit external theme push retains the reference launcher's existing theme-reset behavior.
+See [appearance integration](ANDROID-APPEARANCE.md) for the separate pack and media limits.
 
 These are preference profiles, not parental controls. They do not lock apps, switch streaming accounts,
 create Android users or isolate app data. Creation/editing is currently through an offline library file;

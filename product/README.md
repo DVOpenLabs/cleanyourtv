@@ -6,17 +6,21 @@ build, not an official upstream release or an LG or Apple product.
 
 The goal is one maintained repository with Android and LG webOS implementations, consistent settings,
 local profiles and media formats. Platform-specific Home handling and builds remain separate. The current
-Android launcher lives in `launcher/`. **The webOS implementation has not been imported or integrated yet.**
+Android launcher lives in `launcher/`. The first webOS recovery patch/source layer lives in
+`platforms/webos/`; **the complete webOS launcher/helper is not integrated or deployable yet**.
 
 ## What exists now
 
 - Native Android style preview, timed Revert and scoped Undo, inherited from the tested Sony prototype.
 - A shared profile format, desktop exporter and Android native profile picker with offline library import.
+- Bottom carousel with native focus/preview/Undo; bounded offline visual themes; optional silent local video.
+- A pinned, reproducible LG helper recovery patch with portable C and controller-protocol checks.
 - An integration roadmap and source/licence review register. Listed projects are candidates, not bundled apps.
 
 This branch has not been installed on a TV. The existing Sony style-test installation is unchanged.
-The Android picker is compiled and unit tested, not device tested. The webOS profile adapter, carousel,
-ZIP theme importer and live-video player remain pending. See [Android profile integration](ANDROID-PROFILES.md).
+The Android additions are compiled and locally tested, not device accepted. The webOS runtime/profile
+adapter and hardware acceptance remain pending. See [Android profiles](ANDROID-PROFILES.md),
+[appearance integration](ANDROID-APPEARANCE.md) and [lightweight SHOWCASE candidates](SHOWCASE-LIGHTWEIGHT.md).
 
 ## Shared profiles: first working slice
 

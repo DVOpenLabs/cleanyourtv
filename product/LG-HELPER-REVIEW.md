@@ -19,7 +19,7 @@ Helper tile opens explanatory UI; an explicit resume action starts capture. Loca
 monitoring uses the paired TV connection. The source includes key-file ownership, group/mode, no-symlink
 and atomic-replacement checks; those Linux behaviors were read, not validated on LG hardware here.
 
-## Recovery finding to resolve before integration
+## Recovery finding and product patch
 
 The relay maps `RELEASE` to exit code **27** in
 [`relay.c`](https://github.com/Razdva122/clean-your-tv-lg-webos/blob/d5804f6a7ce5d4eb35c0093ca19ae011e5a6df7f/native/prototype/relay.c#L76).
@@ -33,9 +33,12 @@ LG Home launch. This supports a source-level mismatch with the documented triple
 It does not establish what a real webOS window manager ultimately displays. The physical remote may
 be released successfully while the current launcher remains visible until another Home press.
 
-Before porting, align the filter/relay/controller exit contract and test intentional triple-Home recovery
-separately from input overflow, pending Home-launch replies and a stalled worker. Do not simply change
-every abnormal exit into an automatic LG Home launch. No public bug report or upstream patch was sent.
+The [product patch layer](../platforms/webos/README.md) now separates `EXIT_HOME` (22) from `RELEASE`
+(27), preserving the old action values. The relay uses the tested mapping; the existing controller
+requires no change. A fresh pinned source extraction accepts the patch. Portable C tests and controller
+simulation distinguish intentional recovery from overflow, including an in-flight launch and repeated
+finish callbacks. No public bug report or upstream patch was sent. Full helper import and hardware
+acceptance remain pending.
 
 ## Local checks
 
@@ -46,13 +49,14 @@ their first sandbox-temp runs failed and the corrected environment runs passed.
 
 `tests/controller-resume-home.cjs` could not complete on Windows: its current test setup reaches
 `process.getuid()` in the Linux permission module. This remains unvalidated here; no shim was used to
-claim a pass. The C relay/filter were not compiled or executed, and Node 0.12 compatibility, real UID/GID
-handling, Developer Mode expiry, standby/cold boot and actual remote behavior remain untested.
+claim a pass. Alpha 2 compiles and runs the portable filter and startup tests with MSVC C11 on Windows.
+The Linux relay itself was not compiled/executed. Node 0.12 compatibility, real UID/GID handling,
+Developer Mode expiry, standby/cold boot and actual remote behavior remain untested.
 
 ## Integration decision
 
-Keep this as the leading no-root webOS candidate, with the recovery finding as a gate before importing
-or deploying the helper. Review/build source rather than importing the committed IPKs. Keep the root
+Keep this as the leading no-root webOS candidate, with target-runtime recovery acceptance as a gate
+before deploying the helper. Review/build source rather than importing the committed IPKs. Keep the root
 edition outside the default path. Retain the MIT notices plus the font, WebSocket, compatibility-runtime
 and any redistributed desktop Qt notices. Preserve recovery controls independently of profiles/themes.
 

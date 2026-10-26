@@ -17,8 +17,9 @@ requirements, third-party notices and update paths. Vendor only reviewed source 
 into a platform directory; keep the origin/revision history. Do not introduce a floating install/download.
 The product's Windows build path should produce both platform packages from this repository.
 
-The first [helper review](LG-HELPER-REVIEW.md) found a recovery exit-code mismatch. Resolve and test that
-contract before importing the helper; there has been no LG installation or runtime acceptance.
+The first [helper review](LG-HELPER-REVIEW.md) found a recovery exit-code mismatch. Alpha 2 supplies a
+pinned patch and locally passing filter/startup/controller tests in `platforms/webos/`. Full helper
+packaging, target-runtime tests and LG hardware acceptance are still pending; nothing was installed.
 
 LG model and firmware inventory is still missing. The current helper's C3/C4/other-model evidence has
 limits; a published release is not acceptance on the owner's TVs. Do not use root as the default path.
@@ -26,16 +27,18 @@ Automatic on-TV Home handling, standby/wake and the recovery shortcut need model
 
 ## 3. Layouts, focus and shared appearance
 
-Evaluate Home Styles' Aurora/Cinema/Orbit and Header Grid's focus/spacing implementation. Preserve the
+The first native bottom carousel is implemented with the existing preview/Undo and adapter. Evaluate
+Home Styles' Aurora/Cinema/Orbit and Header Grid's focus/spacing implementation next. Preserve the
 existing native app model rather than importing whole competing launchers. The bottom carousel must
 support reorder/library behavior, clear focus, all requested favorites and a grid fallback. Retain the
 Sony's tested 20-second preview and Undo behavior. Verify RTL, reduced motion and scaling.
 
 ## 4. Theme library and silent live backgrounds
 
-Review the offline ZIP importer and local-video player separately. Validate imported paths/resources,
+The restricted offline ZIP importer and permanently silent local-video adaptation are implemented.
+Validate native picker/player behavior next. Imported paths/resources are bounded; continue to
 preserve manual preferences, and keep user artwork outside the public repository. Every live theme needs
-a still fallback and mute-by-default behavior. Release the player while streaming apps are in front.
+a still fallback and silent behavior. Release the player while streaming apps are in front.
 Test corrupt/unsupported media, process recreation, standby and actual streaming playback on Sony and
 Streamer before handover. LG playback support must be tested rather than inferred from Android.
 
