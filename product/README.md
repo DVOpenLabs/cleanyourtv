@@ -11,11 +11,12 @@ Android launcher lives in `launcher/`. **The webOS implementation has not been i
 ## What exists now
 
 - Native Android style preview, timed Revert and scoped Undo, inherited from the tested Sony prototype.
-- A shared profile format and a desktop-only export tool for the existing Android and webOS configuration keys.
+- A shared profile format, desktop exporter and Android native profile picker with offline library import.
 - An integration roadmap and source/licence review register. Listed projects are candidates, not bundled apps.
 
 This branch has not been installed on a TV. The existing Sony style-test installation is unchanged.
-No cross-platform on-TV profile picker, carousel, ZIP importer or live-video player is claimed yet.
+The Android picker is compiled and unit tested, not device tested. The webOS profile adapter, carousel,
+ZIP theme importer and live-video player remain pending. See [Android profile integration](ANDROID-PROFILES.md).
 
 ## Shared profiles: first working slice
 
@@ -35,9 +36,9 @@ theme uses it as `config.json`; the webOS adapter uses the values for `window.CO
 connect to a TV, install an app, change Home, alter accounts or push a theme. It refuses to overwrite an
 existing output file. Private configuration belongs in `product/private/`, which is ignored by Git.
 
-The exporter is a migration/building block. It does not yet connect a profile picker to either running
-launcher or override an existing on-TV manual app order. Applying profiles on the TV requires an explicit,
-tested adapter for that launcher's saved preferences.
+The exporter remains a desktop migration tool. The Android product source now also imports the shared
+library and separates each selected profile's native saved appearance, order and library shortcuts.
+That runtime integration still needs native UI and device testing; the webOS runtime adapter is pending.
 
 ## Product rules
 
@@ -55,5 +56,6 @@ tested adapter for that launcher's saved preferences.
 - Test preview builds before handover; retain a recovery route. Device acceptance includes real remote
   buttons and playback. Do not turn off this owner's ADB during ongoing work without their instruction.
 
-See [the roadmap](ROADMAP.md) and [the source register](sources.json). The root README below this branch's
+See [the validation record](VALIDATION.md), [roadmap](ROADMAP.md), [LG helper review](LG-HELPER-REVIEW.md)
+and [source register](sources.json). The root README below this branch's
 notice continues to describe upstream; it is not a claim that these product plans have shipped.

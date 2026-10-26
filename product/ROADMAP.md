@@ -2,8 +2,8 @@
 
 ## 1. Shared local profiles and settings
 
-The initial desktop exporter is implemented. Next, add native profile persistence and a remote-friendly
-picker on Android, then connect the same profile semantics to webOS. Switching must preserve each person's
+The desktop exporter and first Android native picker/import/persistence integration are implemented.
+Next, verify the Android UI in isolation and connect the same profile semantics to webOS. Switching must preserve each person's
 favorites, hidden apps, layout and selected media; unrelated TV settings remain global. Cancelling or an
 interrupted save must retain the previous profile. Migration must preserve the owner's current layout.
 
@@ -16,6 +16,9 @@ Review the pinned no-root implementation from Razdva122, including its helper, r
 requirements, third-party notices and update paths. Vendor only reviewed source with its licence notices
 into a platform directory; keep the origin/revision history. Do not introduce a floating install/download.
 The product's Windows build path should produce both platform packages from this repository.
+
+The first [helper review](LG-HELPER-REVIEW.md) found a recovery exit-code mismatch. Resolve and test that
+contract before importing the helper; there has been no LG installation or runtime acceptance.
 
 LG model and firmware inventory is still missing. The current helper's C3/C4/other-model evidence has
 limits; a published release is not acceptance on the owner's TVs. Do not use root as the default path.

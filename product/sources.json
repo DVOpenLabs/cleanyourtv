@@ -18,8 +18,13 @@
       "licenseFile": "LICENSE",
       "license": "MIT; fonts, bundled dependencies and desktop Qt have additional notices",
       "reuse": "launcher, no-root on-TV helper and Windows build/install design",
-      "status": "guides and licence reviewed; source/runtime integration pending",
-      "requiredBeforeImport": ["Review helper and recovery paths", "Retain THIRD_PARTY_NOTICES.md and transitive licences", "Identify owner LG models and firmware", "Keep root edition out of the default path"]
+      "status": "Controller/relay/helper entry source reviewed; exit-code mismatch documented in LG-HELPER-REVIEW.md; not imported or installed",
+      "requiredBeforeImport": [
+        "Review helper and recovery paths",
+        "Retain THIRD_PARTY_NOTICES.md and transitive licences",
+        "Identify owner LG models and firmware",
+        "Keep root edition out of the default path"
+      ]
     },
     {
       "name": "Home Styles",
@@ -30,7 +35,12 @@
       "license": "MIT",
       "reuse": "Aurora, Cinema and Orbit view architecture and deterministic navigation",
       "status": "guide and licence reviewed; component source audit and port pending",
-      "requiredBeforeImport": ["Preserve app model and style-preview rollback", "Resolve library/reorder restrictions in alternate styles", "Test RTL and reduced motion", "Retain attribution"]
+      "requiredBeforeImport": [
+        "Preserve app model and style-preview rollback",
+        "Resolve library/reorder restrictions in alternate styles",
+        "Test RTL and reduced motion",
+        "Retain attribution"
+      ]
     },
     {
       "name": "Local video and effects",
@@ -41,7 +51,12 @@
       "license": "MIT",
       "reuse": "LiveVideo lifecycle, silent playback and still fallback",
       "status": "LiveVideo.java, guide and licence reviewed; port pending",
-      "requiredBeforeImport": ["Do not import night-mode settings grants or soundbar sounds", "Measure memory/decoder/CPU behavior on each Android device", "Verify actual streaming playback after leaving Home", "Keep animation optional"]
+      "requiredBeforeImport": [
+        "Do not import night-mode settings grants or soundbar sounds",
+        "Measure memory/decoder/CPU behavior on each Android device",
+        "Verify actual streaming playback after leaving Home",
+        "Keep animation optional"
+      ]
     },
     {
       "name": "Offline theme packs",
@@ -52,7 +67,11 @@
       "license": "MIT code; themed artwork needs a separate licence review",
       "reuse": "offline import, on-TV selection and preservation of manual settings",
       "status": "guide and code licence reviewed; importer source audit pending",
-      "requiredBeforeImport": ["Do not bundle Nintendo artwork", "Validate imported resources and paths", "Test switching and interrupted imports without losing preferences"]
+      "requiredBeforeImport": [
+        "Do not bundle Nintendo artwork",
+        "Validate imported resources and paths",
+        "Test switching and interrupted imports without losing preferences"
+      ]
     },
     {
       "name": "LiquiTvOs",
@@ -63,7 +82,11 @@
       "license": "MIT",
       "reuse": "profile selector and quick-controls UI references",
       "status": "guide, profile source excerpt and licence reviewed; port pending",
-      "requiredBeforeImport": ["Implement independent local profile data rather than only account selection", "Review photo and Bluetooth permissions separately", "Exclude personal photographs"]
+      "requiredBeforeImport": [
+        "Implement independent local profile data rather than only account selection",
+        "Review photo and Bluetooth permissions separately",
+        "Exclude personal photographs"
+      ]
     },
     {
       "name": "Header Grid",
