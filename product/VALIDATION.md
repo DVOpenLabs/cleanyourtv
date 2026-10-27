@@ -67,3 +67,21 @@ and patch application succeed against a fresh output. A second call against exis
 No Linux relay/ioctl execution, target-Node compatibility or physical LG acceptance is claimed. This is
 a source patch layer, not a complete helper/launcher package. Full platform packaging and deployment
 remain pending; the root edition is excluded. See [the review](LG-HELPER-REVIEW.md).
+
+## Photo screensaver temperature units — 27 October 2026
+
+The optional `Show both Fahrenheit and Celsius` setting is off by default. It converts the raw Celsius
+reading independently into each rounded display value, and prevents a cached single-unit label being
+reused after the option changes. No dependencies, permissions, system settings or media writes were added.
+
+The add-on passes all 11 JVM tests, including six new conversion tests, and release lint has zero errors.
+Both the standard build and a Sony build enabling the new option by resource default compile successfully.
+The Sony APK is 38,408 bytes. It was installed over the existing signed add-on on a BRAVIA 4K VH2,
+Android 12, after backing up its APK and verifying the signing certificate. UID, permissions, selected
+screensaver, timeout and external media hashes were preserved.
+
+Native screenshots show the enabled setting and both units in the slideshow preview, which shares its
+Scene with the Dream service. This batch did not force the system Dream service to start; its selection
+and timing were left unchanged. Physical readability feedback is pending. Screenshots and personal
+artwork remain private. The launcher header's dual-unit trial is still in the isolated local preview,
+not the public product launcher; its existing 324 JVM tests and release lint pass.
