@@ -1,5 +1,20 @@
 # Local integration checks
 
+## REA Projectivy review and guided appearance controls — 27 October 2026
+
+See [the inspection and selection record](PROJECTIVY-REVIEW.md). REA 6.8.0/JADX 0.7.1 inspected the official 4.72 APK, class inventories, selected methods and incoming-reference coverage. Seventeen complete CLI Evidence records and their digest index are retained privately. Static findings do not establish Projectivy runtime behavior; no proprietary source/assets are copied into this fork.
+
+- **392 JVM tests** pass in each build; **28 product tests** pass. New tests cover explicit text ink, default/selected/hidden label opacity, invalid saved values and profile-scoped storage.
+- Public APK: **588,563 bytes**, SHA-256 `64e41908eb5857dfeff60c0dad302e462885b6864537195a3c8f1a210fca002c`. Signed private pilot: **589,143 bytes**, SHA-256 `13c70f79472655761e07cce1889f1d6362cf122bfa3eaa2b7fc0fb6341d58175`. Both pass the unchanged 589,824-byte ceiling. Public lint: zero errors, 111 warnings, 228 information entries; pilot: zero errors, 117 warnings, 234 information entries.
+- SDK resource-value deduplication retains all 31 prior locale/density configurations, named view IDs and runtime banner names. The bundled font file matches its source bytes. No permission, runtime dependency or service was added.
+- Native Android 12 Sony and Android 14 Streamer checks passed for all four App names modes, automatic/light/dark Home text, contextual help, section focus memory, Cancel, and selection-decoration alignment across all eight apps. The original theme-renderer option was not separately visually accepted in this batch. Existing layout, app order, positions, dimming, profiles and restore-point names were restored/retained. Browsing and canceling leave the settings revision unchanged.
+- Device protection checks match the prior selected Home/accessibility helper, size/density, ADB, screensaver/timeout, boot count, disabled package set, app UID, recovery launcher and original configuration/media hashes. No reboot or helper force-stop was used.
+- Injected Home from Netflix returned to the selected pilot on Sony and through the existing narrow helper on Streamer. Two Home-only background captures per device changed within a crop excluding the header/app row, confirming continued Luffy/Pokémon background motion. This is not a protected-playback or audio-silence measurement.
+
+An initial resource-path-shortening attempt failed Sony color-state-list inflation because Android required an XML suffix. The optimization was removed; the repaired build passed native Home and settings checks before being installed on the Streamer. Resource paths/extensions are preserved in the final artifacts. A touch-driven test also returned without a focused card; the final selection checks use actual D-pad navigation and explicit Home routing. This is not acceptance of pointer navigation on every device.
+
+Screenshots, raw decompilation, private test fixtures and recovery artifacts remain private. Physical-remote/from-seat acceptance, protected streaming playback, casting, largest-font/RTL layout and broader hardware acceptance remain pending. The standard public package itself was built/tested statically; native evidence comes from its existing personalized pilot identity. Neither LG's webOS setup was changed.
+
 ## Theme readability, native settings and saved Homes — 27 October 2026
 
 See [the feature contract](ANDROID-POLISH.md). This independent fork adds opt-in theme-aware solid text, refined focus motion, cinematic idle, on-TV profile creation and five named restore points per profile. Settings now uses a contextual menu/detail flow with five sections. An explicit Inputs shortcut offers real sources on an integrated TV and guidance on an external streamer. No runtime dependency, manifest permission, receiver or service was added by this batch.
