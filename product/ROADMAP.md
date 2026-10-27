@@ -1,5 +1,12 @@
 # Integration roadmap
 
+**27 October alpha-6 update:** The [full native community build](ANDROID-COMMUNITY.md) implements
+Projectivy-inspired nested settings, opt-in named app rows, independent text-size previews, native
+app customization, visual local wallpaper/theme browsers and automatic recent-change recovery.
+This supersedes the earlier narrow size constraint for the full product; reference CI remains unchanged.
+Public weather-header packaging, verified content-provider integrations, category/grid interaction
+parity and LG webOS deployment remain separate work. Current evidence is in [validation](VALIDATION.md).
+
 **Current Android work:** [cinematic idle, adaptive text, native profile creation and saved setups](ANDROID-POLISH.md) are implemented. Dated device results and remaining acceptance are recorded in [validation](VALIDATION.md).
 
 **27 October follow-up:** Top/Middle/Bottom alignment and the fuller desktop Home preview are

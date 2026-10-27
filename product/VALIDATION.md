@@ -1,5 +1,63 @@
 # Local integration checks
 
+## Full native community features — 27 October 2026
+
+See [the feature contract](ANDROID-COMMUNITY.md) and [expanded Projectivy review](PROJECTIVY-REVIEW.md).
+The owner approved a larger full product; useful features are no longer restricted to the reference
+APK ceiling. One optional source set extends the same app identity. It adds no runtime dependency,
+manifest permission, service or launcher network client. The reference build/gate and CI are unchanged.
+
+- Full public release: **624,915 bytes**, SHA-256 `7597dfdb21d93f9007e771288c4fdcbd0cade628f2e90b334c94258cebc98baf`.
+  Same-feature personalized pilot: **626,831 bytes**, SHA-256 `4380d6006b982e372ebc17d306f6df9f6a71f4ab059d9f75746bb2207b8e79e5`.
+  **416 JVM tests** pass in each release and **28 product tests** pass. Full public debug assembly also
+  succeeds. Public lint has zero errors, 123 warnings and 228 information entries; pilot has zero
+  errors, 129 warnings and 234 information entries. These are not warning-free builds.
+- Reference release with no full-feature flag: **588,527 bytes**, SHA-256
+  `b3436d8d18294ceab4baea96f77e82a526ac1c71872a3ea7016d2a8f2433ff43`, **392 JVM tests**, zero lint errors,
+  111 warnings and 228 information entries. Its original 589,824-byte ceiling remains intact.
+- REA/JADX evidence now includes selected settings view/Back-dispatch and preference-screen methods,
+  along with prior package, class, category and preference controls. Twenty-one complete CLI records
+  and their digest index remain private. This is selected static inspection, not execution of every
+  Projectivy feature, and no original code or assets are published.
+
+### Native Sony and Streamer pilot checks
+
+On Android 12 Sony and Android 14 Google TV Streamer, the existing personalized pilot was updated in
+place with package/signing/installed-hash guards. Both use the full feature source; the public default
+package itself was not installed. Tests created disposable launcher profiles, restored Current layout,
+and deleted those test profiles. The original owner's app layout, selected media and profile choices
+were compared before and after, rather than replacing them with demonstration defaults.
+
+- All seven settings sections, nested Appearance navigation and Back passed with no preference/history
+  writes while browsing. Screenshots were inspected for menu hierarchy, current values and focus.
+- A text-size draft canceled without a write. Explicit Apply created a profile-specific automatic point;
+  native Recent changes restored the previous text choice, left no pending journal and retained the
+  existing order/library file hashes. Those files were unchanged by this text edit; this is not a
+  native recovery test of deliberately damaged order/library data.
+- Native rename/original-name reset and icon artwork persisted within the test profile while preserving
+  favorites/order/position. The final catalog puts current Home favorites first. Local-image SAF
+  import/confirmation is implemented and policy-tested but has not been file-picker accepted on-device.
+- Local wallpaper/theme browsers opened, changed preview focus and canceled without a write. Still
+  preview screenshots were retained for visual review. Browsing does not enable or auto-play video.
+- Categories passed create/choose-apps, rename, hide/show, preview without writes, horizontal/vertical
+  row focus, opening Inputs without selecting a port, explicit enable/Home routing, category Arrange,
+  grid-only preview guidance, omission of unsupported grid controls, and return to the existing layout.
+  The category idle preview hid rows/actions and retained the clock/weather; first OK woke without
+  launching an app. Automatic idle timing uses the existing tested policy; physical remote/system-key
+  combinations and a native timed-idle matrix are not established by that preview.
+
+An initial Streamer editor run was interrupted by Android's HDMI active-source-lost activity; its
+cleanup restored the owner profile, and the rerun passed. Earlier native test-harness problems included
+tracking only the latest nested dialog and tapping a clipped list row. The private own-window fixture
+now tracks showing focused dialogs and the app catalog favors current favorites; the reruns passed.
+The Streamer's existing Home-only helper was kept; no UIAutomator or broad accessibility capture was used.
+
+Remaining acceptance includes physical remote buttons/held volume, protected streaming playback,
+casting, larger fonts/RTL/large catalogs, imported-image selection, category/grid long-press parity,
+native timed-idle combinations and real storage/power-loss failures. Category mode can briefly show
+the original grid on Home before its internal activity opens; it stays opt-in. This is bounded Home
+recovery, not media/device backup. The LG webOS launcher was neither installed nor changed.
+
 ## REA Projectivy review and guided appearance controls — 27 October 2026
 
 See [the inspection and selection record](PROJECTIVY-REVIEW.md). REA 6.8.0/JADX 0.7.1 inspected the official 4.72 APK, class inventories, selected methods and incoming-reference coverage. Seventeen complete CLI Evidence records and their digest index are retained privately. Static findings do not establish Projectivy runtime behavior; no proprietary source/assets are copied into this fork.

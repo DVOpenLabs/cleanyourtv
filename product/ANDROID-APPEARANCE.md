@@ -1,5 +1,9 @@
 # Android appearance integration — alpha 2
 
+This is the historical alpha-2 source milestone. The later feature build and native Sony/Streamer
+checks are described in [the current feature contract](ANDROID-COMMUNITY.md) and
+[dated validation](VALIDATION.md); the original installation status below no longer describes the pilot.
+
 The product build adds a bottom carousel, a restricted offline theme library and optional silent local
 video. These are source integrations, compiled and locally tested; they have **not been installed or
 accepted on the owner's TVs**. There are no new Android dependencies, permissions, network calls,

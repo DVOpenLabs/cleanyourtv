@@ -39,6 +39,12 @@ native code. Design references are Home Deck's Jump back in guide, the existing 
 guide and [Projectivy's documented wallpaper controls](https://github.com/spocky/miproja1).
 No Projectivy APK internals/source, media visualizer, permission flow, assets or fonts were imported.
 
+The full community settings, category renderer, artwork picker, wallpaper browser, text previews and
+automatic recovery are independent implementations. Projectivy 4.72 was inspected through REA/JADX
+for selected shipped-artifact behavior and compared with its published guide/release notes. Raw
+decompiled bodies, APK contents and original artwork remain outside this repository. This is a design
+reference, not a licence claim over Projectivy. No new runtime dependency or third-party font was added.
+
 Readable Home and the Chromecast glass library were reviewed for readability/library design, without
 copying their restyles, fonts or source changes. The SamuelSHernandez webOS edition is a planning
 candidate only: its root licence and guides were reviewed, while a full webOS/transitive licence audit

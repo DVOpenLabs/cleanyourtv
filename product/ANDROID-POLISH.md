@@ -1,5 +1,9 @@
 # Cinematic idle, readable theme text and saved Homes
 
+The later [full native build](ANDROID-COMMUNITY.md) adds nested settings, optional category rows,
+text-size previews, native app customization, visual wallpaper browsing and automatic recovery.
+The earlier controls below remain available; see [validation](VALIDATION.md) for dated acceptance.
+
 These features extend this fork's native Android Home. No runtime dependency, permission, network client or service is added. They do not change Android users or streaming accounts.
 
 ## Home layout

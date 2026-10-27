@@ -11,6 +11,8 @@ Android launcher lives in `launcher/`. The first webOS recovery patch/source lay
 
 ## What exists now
 
+- The optional [full native feature build](ANDROID-COMMUNITY.md): nested settings, category rows, text-size
+  previews, on-TV app artwork/name editing, visual wallpaper browsing and bounded automatic recovery.
 - Native Android style preview, timed Revert and scoped Undo, inherited from the tested Sony prototype.
 - A shared profile format, desktop exporter and Android native profile picker with offline library import.
 - Bottom carousel with native focus/preview/Undo; bounded offline visual themes; optional silent local video.
