@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "reviewedOn": "2026-10-26",
+  "reviewedOn": "2026-10-27",
   "purpose": "Pinned source register: status distinguishes selectively integrated adaptations from research-only candidates; no listed installer or binary is bundled.",
   "androidBase": {
     "repository": "https://github.com/Gathin23/cleanyourtv",
@@ -117,6 +117,62 @@
       "license": "MIT",
       "reuse": "Picker/press-gate design and app query/sorting; independent restricted controller and shared per-device delivery gate",
       "status": "Pinned picker/controller/press/settings source and licence reviewed; restricted adaptation release-built; no extra services, watchers, receivers, grants or permissions; pure choice/gesture/save tests pass; physical remote/helper behavior pending"
+    },
+    {
+      "name": "CleanYourTV Panel",
+      "repository": "https://github.com/Pagamase/cleanyourtv-panel",
+      "commit": "8c52c884314cd85fba21a47e60b6e055d7c4e689",
+      "license": "MIT",
+      "reuse": "Desktop arrangement design reference; independently implemented app-only provider/editor, no theme-push reset",
+      "status": "Panel source and licence reviewed; alpha 5 implemented; native app edit/Undo checks on Sony and Streamer"
+    },
+    {
+      "name": "Bluetooth shortcut",
+      "repository": "https://github.com/nikhiltalreja/cleanyourtv",
+      "commit": "e374b929576ea052011feaa5064194ad92ac2a07",
+      "license": "MIT",
+      "reuse": "Independent native-settings shortcut; no scanner or inline pairing code",
+      "status": "Feature source/licence reviewed; Sony native page and Streamer fallback tested; no pairing performed"
+    },
+    {
+      "name": "Generic audio status",
+      "repository": "https://github.com/amachador/xmb-home",
+      "commit": "2acc01861e95004a9ca55de92c19c07daa5c362b",
+      "license": "MIT",
+      "reuse": "Generic indicator idea only; no metadata, source inference or media-browser code imported",
+      "status": "README/NowPlaying source/licence reviewed; independent visible-Home isMusicActive signal implemented; native silent fixture tested"
+    },
+    {
+      "name": "Quick actions design",
+      "repository": "https://github.com/glidiandev/home-deck",
+      "commit": "6ae44996b2970b1a49e49c0b1e505f17bb458bda",
+      "license": "MIT code; fonts and fan artwork have separate notices",
+      "reuse": "Jump To README design reference; extend existing native panel, no code/art/fonts imported",
+      "status": "Guide/licence reviewed; independent native quick-actions entry and app-search implemented"
+    },
+    {
+      "name": "Readable Home review",
+      "repository": "https://github.com/itismowgli/cleanyourtv",
+      "commit": "584f7bfa80ba190092723f4a3690da622dd8eb6f",
+      "license": "Research only; font import would need OFL notice",
+      "reuse": "Sofa readability/performance guide; no typography/restyle import",
+      "status": "Guide reviewed; reported device benchmarks are not measurements of this fork"
+    },
+    {
+      "name": "Chromecast library review",
+      "repository": "https://github.com/NewPlayer0213/cleanyourtv",
+      "commit": "ea2df03e7f109d0310dbe2a21dd0bb4d12abe545",
+      "license": "Research only; no source copied",
+      "reuse": "Library guide/source reviewed for fit; banner/glass/key service port deferred; app search is independent",
+      "status": "FORK.md and AppLibraryDialog reviewed; no wholesale import"
+    },
+    {
+      "name": "LG Developer Mode web shell",
+      "repository": "https://github.com/SamuelSHernandez/cleanyourtv-webOS",
+      "commit": "4be30bddd3429258aac9f755581242f05cde43eb",
+      "license": "Root MIT reviewed; webOS/transitive notices require audit before import",
+      "reuse": "Plan a manual/Quick Access web app first; retain native LG Home",
+      "status": "README/setup/compatibility/root licence reviewed; full component/licence audit, adapter, package and LG hardware testing pending; nothing imported"
     }
   ]
 }

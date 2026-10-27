@@ -1,5 +1,11 @@
 # Integration roadmap
 
+**27 October alpha-5 update:** [Quick actions, local app search, Bluetooth settings/audio status and
+the guarded desktop app editor](ANDROID-COMPANION.md) are implemented. Sony and Streamer native tests
+and remaining acceptance are in [VALIDATION.md](VALIDATION.md). The [current SHOWCASE review](SHOWCASE-REVIEW-2026-10.md)
+and [LG phase plan](LG-NEXT.md) refine the earlier roadmap below; complete LG packaging/hardware
+acceptance and the public weather-header adapter remain pending.
+
 ## 1. Shared local profiles and settings
 
 The desktop exporter and first Android native picker/import/persistence integration are implemented.

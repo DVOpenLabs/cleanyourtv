@@ -1,6 +1,6 @@
 > **Independent product branch:** this branch is developing a cohesive Android and LG webOS Home.
 > See [the product overview, current implementation and limits](product/README.md).
-> It is not an official upstream release. webOS integration and the listed feature ports are still pending.
+> It is not an official upstream release. See the linked validation record for Android feature status and remaining webOS work.
 
 <p align="center">
   <a href="https://cleanyour.tv"><img src="https://raw.githubusercontent.com/Gathin23/cleanyourtv/main/docs/banner.png" alt="CleanYourTV. Your TV, minus the ads. Strip the bloatware from any Android TV or Google TV over Wi-Fi and replace the ad-filled home screen with a clean launcher that looks like an Apple TV. No root, no cable, nothing uninstalled, and a one-line restore." width="800"></a>
@@ -489,6 +489,8 @@ tools/theme.sh themes/aurora                                 # push a theme; --r
 
 | Tool | What it does |
 |---|---|
+| [`tools/layout_editor.py`](tools/layout_editor.py) | Product fork: local app editor with preview, backup and Undo. [Guide](product/ANDROID-COMPANION.md). |
+| [`tools/product_profiles.py`](tools/product_profiles.py) | Product fork: export shared local profile definitions as platform configuration. [Guide](product/ANDROID-PROFILES.md). |
 | [`tools/tv.py`](tools/tv.py) | Pure-Python ADB client: shell, batch, push, pull, reboot, and screenshots, optionally pressing remote keys first. Works where the stock `adb` binary is blocked. |
 | [`tools/b64push.py`](tools/b64push.py) | Uploads large files such as APKs in base64 chunks and verifies the checksum. |
 | [`tools/relay.py`](tools/relay.py) | Forwards a local port to the TV's ADB port, for assistants whose sandbox can't reach your network. Listens on this computer only. [Guide](tools/relay.md). |
@@ -620,6 +622,14 @@ and a wallpaper.
 <details>
 <summary><b>Launcher settings and the default home</b></summary>
 
+On this product branch, **Quick actions** opens the compact native controls panel. Launcher settings
+uses categories for layout, apps/profiles, wallpaper, remote/extras and advanced options.
+See [the product controls guide](product/ANDROID-COMPANION.md).
+
+Product additions include **Reorder apps**, **Find apps**, **Preview Home style**, **Undo last Home style**, **Launcher profiles**, **Offline themes**,
+**Bluetooth & accessories**, the optional **Audio-playing indicator**, input visibility and **Remote TV button**
+choices. They remain grouped by task; unsupported theme/profile controls stay hidden.
+
 - Click **Settings** for the TV's own settings. Hold OK on it for its menu: **Launcher settings** (with
   `launcher_settings_button` a click opens those instead and the menu leaves the row out), **Native settings**
   where the TV ships a settings app of its own beside Android's - Xiaomi China, TCL/FFALCON and Fire OS are
@@ -629,7 +639,7 @@ and a wallpaper.
   (a launcher may not restart the TV itself). The launcher's own page has these rows, top to bottom:
   - **Reorder apps**, only with `launcher_settings_button`: OK picks an app up, the arrows move it, Back
     places it, and Back again finishes.
-  - **Apps per row** 4, 5, 6 or 7; **Rows below dock** 0 to 3, how many rows of tiles stay visible under the
+  - **Apps per row** 4, 5, 6, 7 or 8; **Rows below dock** 0 to 3, how many rows of tiles stay visible under the
     dock band; **Dock band opacity** 100%, 70%, 50% or 30%. The last two only do anything while the dock is
     its own row (`dock_row`, on by default).
   - **Wallpaper**: one picture from the theme's collection (or its `wallpaper.jpg`), **None**, or **Theme

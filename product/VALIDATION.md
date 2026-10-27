@@ -110,3 +110,82 @@ the full reboot test preceded that small adjustment. The final in-place update r
 helper and its bound capabilities=0 state; a native rapid injected-Home smoke check also passed on that
 final installed revision. This is not a claim that casting or every remote button was
 physically tested. See [Home mode and Undo](STREAMER-HOME.md).
+
+## Alpha 5: everyday controls and categorized settings — 27 October 2026
+
+See [the feature contract](ANDROID-COMPANION.md) and [dated SHOWCASE review](SHOWCASE-REVIEW-2026-10.md).
+The selected implementations are independent app-only desktop editing, native settings shortcuts,
+generic audio activity, offline app search and categorized settings. No Android runtime dependency,
+uses-permission, receiver or service was added relative to alpha 4. The optional Home-only helper
+from alpha 4 remains available with the same activation boundary.
+
+### Reproducible local checks
+
+- **358 JVM tests pass**, zero failures/errors. This includes app-draft validation, stale/profile
+  conflict checks, failed-save repair, scoped preferences, saved-order precedence and local search.
+- Standard release lint: **zero errors, 102 warnings**, with 181 informational entries. Not a
+  warning-free build. The trial's private harness has additional warnings.
+- Standard release APK: **589,319 bytes** (575.5 KiB), below the unchanged **589,824-byte** limit by
+  **505 bytes**. This leaves very little room for further base-APK features; optional companions/tools
+  and a new size review are preferable to silently raising the gate. It is 17,330 bytes above alpha 4.
+- Standard APK SHA-256: `eb72df33050c08edd0a7bfd33ad46338c82ef7b53f98913af131e8abf2eebd52`.
+- **23 product Python tests pass**: exporter, desktop editor/HTTP guard/backup/Undo and settings-control
+  reachability. Affected inherited source/menu/tool/settings-documentation checks also pass (28 tests).
+- The full inherited suite was run on Windows: **1,707 tests, 121 failures, 27 errors, 206 skipped**.
+  An archived prior-commit source baseline under the same environment had 123 failures, 28 errors,
+  207 skipped. This is not a green CI result. Existing translation, shell/PowerShell, theme/recovery
+  and fixture assumptions remain unresolved. The unchanged LAN-address test module varied by case
+  between runs; this comparison alone does not prove every remaining failure environmental.
+  New menu documentation, tool indexing, text encoding and the menu-label translation regressions
+  were resolved and their focused checks rerun. No broad inherited-suite pass is claimed.
+- `git diff --check` passes. Existing runtime dependencies and SDK floor remain unchanged.
+
+APK size excludes personal images/video, optional add-ons and desktop Python memory. No new comparative
+CPU, RAM, latency or jank benchmark was performed; the footprint gate and lifecycle checks do not
+establish a performance improvement.
+
+### Native device evidence
+
+Trial package `com.dvopenlabs.cytv.usabilitytest` was updated in place on Sony BRAVIA 4K VH2 / Android 12
+and Google TV Streamer (`kirkwood`) / Android 14, using the existing certificate and UID. Final trial
+APK: **588,907 bytes**, SHA-256
+`7c61e4bc9a61fb80a082f38ca4a02bd65230faaa7520b1d8c70092346e998a21`.
+Its private weather/appearance/readback fixtures are not in the public source package. These results
+do not establish hardware acceptance of the unmodified standard package or every feature combination.
+
+On both devices:
+
+- Native adapter readback and screenshots verified a temporary favorite swap and custom app name;
+  Undo restored the exact prior rendered tiles and app-only snapshot. A separate rename/Undo,
+  stale-draft rejection and ordinary-app-UID permission denial also passed. These editor/security
+  checks preceded the categorized-settings-only change; their implementation did not change afterward.
+- A silent PCM fixture at zero player gain exercised Android's music-active signal and displayed the
+  indicator above Settings. Cleanup released the fixture and restored the prior indicator preference.
+  This is not a test of every streaming app's background-audio path. The option remains off unless
+  the owner enables it.
+- The native Bluetooth route opened Sony's exported Remotes/accessories slice. Streamer could not
+  resolve a direct supported route and used ordinary TV Settings with a hint. No device was selected
+  or paired, and no Bluetooth permission was granted. Route checks preceded the category-only UI change.
+- The on-TV reorder collision guard rejected desktop editing while reorder was active; no apps moved.
+- Native local search returned only Netflix, handled no matching apps, cleared back to the full
+  catalogue, and closed without changing the layout. Tests used injected D-pad/native keyboard and
+  screenshot-confirmed dialog buttons, not an assertion about the owner's physical remote.
+- All five settings categories were reached; Right entered controls; Back returned to categories;
+  Back from the rail closed settings. The full editor snapshot **and revision** were identical before
+  and after browsing. Current eight-column layouts show 8 selected; no layout choice was applied.
+- Netflix/STB EMU launch, wallpaper-player release behind those apps and local-video resume on return
+  passed. Streamer also returned through the existing helper after injected Home. Actual protected
+  playback is not established by these checks.
+- Package UID/certificate, saved Home/accessibility selection, display size/density, ADB state,
+  screensaver/timeout, disabled packages, original-launcher APK and external config/media hashes were
+  preserved. Sony's original theme hashes also matched. Boot counts did not change; idle screensavers
+  were dismissed to test the UI without changing their configuration. **No additional reboot** was run.
+
+Sony's original selected Home remains unchanged; its new features are in the separate preview. On the
+Streamer the existing narrow Home redirect continues to select this trial as custom Home. Stock Google
+launcher/setup/Cast remain enabled. Debugging remains on as requested during ongoing development.
+
+Screenshots, app inventories, device addresses, personal media and recovery APKs remain private.
+Real remote buttons, actual Netflix/STB playback, RTL, largest-font layout, new cold-boot/casting tests
+and broader model acceptance remain pending. No LG was connected or modified; [LG-NEXT.md](LG-NEXT.md)
+is a staged plan, with exact firmware/model inventory still required.

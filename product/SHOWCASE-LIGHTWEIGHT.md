@@ -1,5 +1,11 @@
 # SHOWCASE: useful features without a heavy installation
 
+**27 October update:** the [complete feature-family triage and selected source review](SHOWCASE-REVIEW-2026-10.md)
+supersedes the candidate-only status of the desktop editor, Bluetooth shortcut and generic audio
+indicator below. Alpha 5 implements these alongside native Quick actions and offline app search;
+see [usage/preservation boundaries](ANDROID-COMPANION.md). The dated earlier shortlist remains here
+as research history, not a claim that every listed project was integrated.
+
 Reviewed 26 October 2026 using the current [SHOWCASE index](https://github.com/Gathin23/cleanyourtv/blob/main/SHOWCASE.md)
 and the primary guides/source linked below. This is selective triage, not an audit of every project.
 The index itself says its projects are independently maintained and not reviewed by upstream.
@@ -44,7 +50,7 @@ rights to redistribute its assets.
 Alpha 3 implements **focus contrast + extra spacing**, followed by the optional input filter and TV-button
 picker. These source integrations remain off by default and need native/physical acceptance; no TV was
 changed. See [the usability contract](ANDROID-USABILITY.md). Whole-row navigation, the audio indicator
-and Bluetooth changes remain candidates rather than bundled features.
+and Bluetooth changes were still candidates at that alpha-3 stage; see the alpha-5 update above.
 
 ## Follow-up review — 27 October 2026
 

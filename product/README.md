@@ -16,6 +16,9 @@ Android launcher lives in `launcher/`. The first webOS recovery patch/source lay
 - Bottom carousel with native focus/preview/Undo; bounded offline visual themes; optional silent local video.
 - Opt-in dual-contrast focus, per-profile extra spacing, global HDMI visibility and a remote TV-button picker.
 - An optional [Google TV Streamer Home-only redirect](STREAMER-HOME.md), inactive until explicitly selected, replacing a separate custom Home watcher.
+- Alpha 5 [Quick actions, offline app search, a native Bluetooth shortcut and optional audio status](ANDROID-COMPANION.md).
+- Categorized native settings with current values, predictable Back, and a confirmation before restoring defaults.
+- A local desktop app editor with exact-draft preview, backups, conflict checks and guarded Undo; no TV web server or model dependency.
 - A pinned, reproducible LG helper recovery patch with portable C and controller-protocol checks.
 - An integration roadmap and source/licence review register. Listed projects are candidates, not bundled apps.
 
@@ -26,6 +29,9 @@ accepted. The latest Sony prototype remains isolated from its selected Home. The
 adapter and hardware acceptance remain pending. See [Android profiles](ANDROID-PROFILES.md),
 [appearance integration](ANDROID-APPEARANCE.md) and [lightweight SHOWCASE candidates](SHOWCASE-LIGHTWEIGHT.md).
 Alpha 3 usability controls and their remaining native checks are described in [Android usability](ANDROID-USABILITY.md).
+The [dated SHOWCASE review](SHOWCASE-REVIEW-2026-10.md) explains the alpha-5 selection and what remains
+deferred. The [LG next-phase plan](LG-NEXT.md) compares a manual Developer Mode web app with a separately
+gated Home helper. The owner's OLED B3 is a model-family lead, not established webOS compatibility.
 
 ## Shared profiles: first working slice
 

@@ -22,3 +22,19 @@ The new native carousel does not copy an alternate launcher's renderer; it exten
 adapter. SHOWCASE projects used only as design/research references are listed in the source register
 and lightweight review, not represented as bundled components. Preserve this attribution and the licence
 files when redistributing adapted source or builds.
+
+## Alpha 5 design references
+
+The desktop editor/provider, local app search and audio/settings controllers are independent code.
+They use [Panel](https://github.com/Pagamase/cleanyourtv-panel/tree/8c52c884314cd85fba21a47e60b6e055d7c4e689),
+the [Bluetooth fork](https://github.com/nikhiltalreja/cleanyourtv/tree/e374b929576ea052011feaa5064194ad92ac2a07),
+[XMB Home](https://github.com/amachador/xmb-home/tree/2acc01861e95004a9ca55de92c19c07daa5c362b) and
+[Home Deck's Jump To guide](https://github.com/glidiandev/home-deck/tree/6ae44996b2970b1a49e49c0b1e505f17bb458bda)
+as design references. Their MIT licences were reviewed. No panel installer/theme-push code, Bluetooth
+scanner, NowPlaying metadata/browser code, WebView shell, fonts or fan artwork was copied from these
+projects. The controls extend the native launcher and QuickSettingsActivity already in this fork.
+
+Readable Home and the Chromecast glass library were reviewed for readability/library design, without
+copying their restyles, fonts or source changes. The SamuelSHernandez webOS edition is a planning
+candidate only: its root licence and guides were reviewed, while a full webOS/transitive licence audit
+remains required before import. See [the source register](sources.json) and [LG plan](LG-NEXT.md).
