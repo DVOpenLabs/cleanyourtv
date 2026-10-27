@@ -15,11 +15,14 @@ Android launcher lives in `launcher/`. The first webOS recovery patch/source lay
 - A shared profile format, desktop exporter and Android native profile picker with offline library import.
 - Bottom carousel with native focus/preview/Undo; bounded offline visual themes; optional silent local video.
 - Opt-in dual-contrast focus, per-profile extra spacing, global HDMI visibility and a remote TV-button picker.
+- An optional [Google TV Streamer Home-only redirect](STREAMER-HOME.md), inactive until explicitly selected, replacing a separate custom Home watcher.
 - A pinned, reproducible LG helper recovery patch with portable C and controller-protocol checks.
 - An integration roadmap and source/licence review register. Listed projects are candidates, not bundled apps.
 
-This branch has not been installed on a TV. The existing Sony style-test installation is unchanged.
-The Android additions are compiled and locally tested, not device accepted. The webOS runtime/profile
+Selected Android features are being tested in separate Sony and Streamer builds. The Streamer now uses
+this fork's Home-only helper instead of its previous custom Home watcher; its Pokémon media and app
+layout were preserved. The full standard product APK and every feature combination are not device
+accepted. The latest Sony prototype remains isolated from its selected Home. The webOS runtime/profile
 adapter and hardware acceptance remain pending. See [Android profiles](ANDROID-PROFILES.md),
 [appearance integration](ANDROID-APPEARANCE.md) and [lightweight SHOWCASE candidates](SHOWCASE-LIGHTWEIGHT.md).
 Alpha 3 usability controls and their remaining native checks are described in [Android usability](ANDROID-USABILITY.md).

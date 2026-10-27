@@ -86,3 +86,27 @@ and timing were left unchanged. The owner confirmed both units were comfortably 
 launcher and screensaver preview, without overlap. Screenshots and personal
 artwork remain private. The launcher header's dual-unit trial is still in the isolated local preview,
 not the public product launcher; its existing 324 JVM tests and release lint pass.
+
+## Streamer persistent Home — 27 October 2026
+
+Alpha 4 adds an optional Home-only accessibility helper. It is inactive until selected; no installer
+or default configuration silently selects it. The standard build passes 332 JVM tests (eight new policy
+tests), release lint has zero errors, and its release APK is 571,989 bytes, below the 589,824-byte gate.
+No runtime dependency or uses-permission was added. A Streamer trial build is 570,113 bytes; its private
+weather/appearance harness and personal media are not bundled in the public product.
+
+On a Google TV Streamer (`kirkwood`), Android 14, firmware UTTK.260317.003, the trial was updated in place
+after saving the previous APK and checking its signing certificate. Its UID was retained. Only the
+previous custom Home watcher was replaced in the saved accessibility list. The new bound service
+reports capabilities=0; the previous watcher is no longer selected. Google launcher/setup/Cast components,
+display overrides, disabled packages, animation scales, screensaver selection and power timeout were
+preserved. No Sony APK or configuration was changed in this rollout.
+
+Native smoke checks passed: Netflix/STB EMU launch, wallpaper-player release while those apps are in
+front, injected Home returning to the fork, repeated Home, native Settings remaining open, and automatic
+Home plus muted Pokémon playback after a reboot. Actual protected playback and physical remote behavior
+still require owner acceptance. The final duplicate-coalescing adjustment also passes the policy tests;
+the full reboot test preceded that small adjustment. The final in-place update retained the selected
+helper and its bound capabilities=0 state; a native rapid injected-Home smoke check also passed on that
+final installed revision. This is not a claim that casting or every remote button was
+physically tested. See [Home mode and Undo](STREAMER-HOME.md).
