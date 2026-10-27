@@ -53,8 +53,11 @@ reports active music. It checks every two seconds only while Home is resumed. Le
 callback and hides the label. The indicator has no focusable control and no extra service.
 
 It cannot identify a song or source app, and is not a Cast, HDMI or playback-success indicator. There
-is no notification, media-session, recording or usage-access permission. Device-specific external
-audio paths may not be reflected by Android's music-active signal.
+is no notification, media-session, recording or usage-access permission. A wallpaper's own muted
+soundtrack uses UI-sonification audio attributes at zero gain, mapped separately from music; no system
+volume or audio focus is changed. This avoids reporting the silent background as music
+([Android attribute mapping](https://source.android.com/docs/core/audio/attributes)). Device-specific
+external audio paths may not be reflected by Android's music-active signal.
 
 ## Desktop app editor
 

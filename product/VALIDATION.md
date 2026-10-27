@@ -125,10 +125,10 @@ from alpha 4 remains available with the same activation boundary.
   conflict checks, failed-save repair, scoped preferences, saved-order precedence and local search.
 - Standard release lint: **zero errors, 102 warnings**, with 181 informational entries. Not a
   warning-free build. The trial's private harness has additional warnings.
-- Standard release APK: **589,319 bytes** (575.5 KiB), below the unchanged **589,824-byte** limit by
-  **505 bytes**. This leaves very little room for further base-APK features; optional companions/tools
-  and a new size review are preferable to silently raising the gate. It is 17,330 bytes above alpha 4.
-- Standard APK SHA-256: `eb72df33050c08edd0a7bfd33ad46338c82ef7b53f98913af131e8abf2eebd52`.
+- Standard release APK: **589,347 bytes** (575.5 KiB), below the unchanged **589,824-byte** limit by
+  **477 bytes**. This leaves very little room for further base-APK features; optional companions/tools
+  and a new size review are preferable to silently raising the gate. It is 17,358 bytes above alpha 4.
+- Standard APK SHA-256: `828c8bbf8964c2beebf1efdff0643740f1599b4c69d6774b7dc6f94c2301a927`.
 - **23 product Python tests pass**: exporter, desktop editor/HTTP guard/backup/Undo and settings-control
   reachability. Affected inherited source/menu/tool/settings-documentation checks also pass (28 tests).
 - The full inherited suite was run on Windows: **1,707 tests, 121 failures, 27 errors, 206 skipped**.
@@ -148,8 +148,8 @@ establish a performance improvement.
 
 Trial package `com.dvopenlabs.cytv.usabilitytest` was updated in place on Sony BRAVIA 4K VH2 / Android 12
 and Google TV Streamer (`kirkwood`) / Android 14, using the existing certificate and UID. Final trial
-APK: **588,907 bytes**, SHA-256
-`7c61e4bc9a61fb80a082f38ca4a02bd65230faaa7520b1d8c70092346e998a21`.
+APK: **588,971 bytes**, SHA-256
+`c79324513570c64a11d100655f231fdb5f0711a030f196958919235a7beb61a0`.
 Its private weather/appearance/readback fixtures are not in the public source package. These results
 do not establish hardware acceptance of the unmodified standard package or every feature combination.
 
@@ -162,7 +162,11 @@ On both devices:
 - A silent PCM fixture at zero player gain exercised Android's music-active signal and displayed the
   indicator above Settings. Cleanup released the fixture and restored the prior indicator preference.
   This is not a test of every streaming app's background-audio path. The option remains off unless
-  the owner enables it.
+  the owner enables it. A final native comparison on each device used zero-gain PCM on both the music
+  route and the background's UI-sonification route: only the music route set music-active. Both
+  fixtures released and restored the prior indicator preference. Live video now explicitly uses the
+  latter route at permanently zero gain so a muted soundtrack cannot masquerade as background music.
+  Launch/player-release/resume and protected-state checks passed again on this final build.
 - The native Bluetooth route opened Sony's exported Remotes/accessories slice. Streamer could not
   resolve a direct supported route and used ordinary TV Settings with a hint. No device was selected
   or paired, and no Bluetooth permission was granted. Route checks preceded the category-only UI change.
