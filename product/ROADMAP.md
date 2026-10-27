@@ -1,5 +1,7 @@
 # Integration roadmap
 
+**Current Android work:** [cinematic idle, adaptive text, native profile creation and saved setups](ANDROID-POLISH.md) are implemented. Dated device results and remaining acceptance are recorded in [validation](VALIDATION.md).
+
 **27 October follow-up:** Top/Middle/Bottom alignment and the fuller desktop Home preview are
 implemented. The next lightweight controls add optional recently opened apps, direct profile access
 when profiles are enabled, and native wallpaper dimming. No automatic profile or appearance change is

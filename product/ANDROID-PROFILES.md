@@ -1,12 +1,12 @@
 # Android launcher profiles — first integration
 
-This is source integration on the independent product branch. It has not been installed on a TV.
+This is the independent product branch. The Sony/Streamer pilot results and limits are in [validation](VALIDATION.md); on-TV creation and management are described in [Home polish](ANDROID-POLISH.md).
 The feature is off by default; a test theme can enable `local_profiles: true`. No manifest permission,
 new dependency, Android account access or device setting is added.
 
 ## User flow
 
-Launcher settings has a **Launcher profiles** row when enabled. Its native D-pad chooser offers
+Launcher settings always offers explicit creation of a profile copied from the current Home. Once enabled, its native D-pad chooser offers
 **Current layout**, imported named profiles, and **Import profile library**. Import uses Android's
 document picker, with a Cancel-first confirmation. Cancel leaves the library and selected profile alone.
 The file uses the format in [profiles.example.json](profiles.example.json); its app IDs are placeholders,
@@ -38,8 +38,7 @@ choices; an explicit external theme push retains the reference launcher's existi
 See [appearance integration](ANDROID-APPEARANCE.md) for the separate pack and media limits.
 
 These are preference profiles, not parental controls. They do not lock apps, switch streaming accounts,
-create Android users or isolate app data. Creation/editing is currently through an offline library file;
-an on-TV profile editor is still pending. English fallback labels are present; translations are not complete.
+create Android users or isolate app data. Profiles can be created, renamed and deleted on the TV; offline library import remains available. English fallback labels are present; translations are not complete.
 
 ## Validation and limits
 
@@ -47,8 +46,7 @@ JVM checks cover profile mapping, malformed documents, isolated settings, single
 failed-selection repair, file names, import size and nesting boundaries. The desktop exporter tests cover
 the shared format and preservation of unrelated keys. Android release compilation and lint are required.
 
-No emulator, TV file-picker flow, native dialog focus, real disk-failure injection, physical remote, playback
-or restart result is claimed for this feature. Finish those checks in a separate preview identity before
-considering any handover. Do not auto-install this branch over the owner's current launcher.
+No emulator, TV file-picker import, real disk-failure injection, physical remote, playback
+or restart result is inferred from the locally created profile tests. Device installation requires an explicit owner-authorized pilot.
 Availability of Android's document picker on each TV also needs checking; TVs without a provider need
 an alternative offline import path before this feature can be offered there.

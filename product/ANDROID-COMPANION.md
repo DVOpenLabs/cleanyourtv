@@ -6,12 +6,7 @@ uses-permission is added. Personal artwork remains outside the APK.
 
 ## Categorized Launcher settings
 
-The settings page has a category rail and an independently scrolling control pane: **Home layout**,
-**Apps & profiles**, **Wallpaper**, **Remote & extras** and **Advanced**. Up/Down selects a category;
-Right or OK enters its controls. Back from the controls returns to the category; Back again closes
-settings. The selected category survives activity recreation through instance state, without writing
-preferences simply because a page was browsed. Unsupported profile/theme controls retain their
-existing capability gates.
+The settings page uses a short menu beside contextual guidance: **Home appearance**, **Apps & profiles**, **Wallpaper**, **Remotes & inputs** and **Advanced**. Up/Down selects a category; Right or OK opens its detail page. Back returns to the menu, then closes settings. Detail pages retain current values and native controls, with restrained focus surfaces rather than a card behind every row. Selected category/detail state survives recreation without writing settings while browsing. Offline theme controls keep their capability gates; on-TV profile creation is an explicit opt-in. See [Home polish](ANDROID-POLISH.md).
 
 Layout captions show current values, including theme values, and apps-per-row now offers 4 through 8
 so an existing eight-app layout has a matching selected control. Numeric rows retain Left/Right

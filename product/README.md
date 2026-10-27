@@ -18,6 +18,7 @@ Android launcher lives in `launcher/`. The first webOS recovery patch/source lay
 - An optional [Google TV Streamer Home-only redirect](STREAMER-HOME.md), inactive until explicitly selected, replacing a separate custom Home watcher.
 - Alpha 5 [Quick actions, offline app search, a native Bluetooth shortcut and optional audio status](ANDROID-COMPANION.md).
 - Categorized native settings with current values, predictable Back, and a confirmation before restoring defaults.
+- [Cinematic idle, adaptive theme text, on-TV profile creation and named Home restore points](ANDROID-POLISH.md).
 - A local desktop app editor with exact-draft preview, backups, conflict checks and guarded Undo; no TV web server or model dependency.
 - A pinned, reproducible LG helper recovery patch with portable C and controller-protocol checks.
 - An integration roadmap and source/licence review register. Listed projects are candidates, not bundled apps.
@@ -25,7 +26,7 @@ Android launcher lives in `launcher/`. The first webOS recovery patch/source lay
 Selected Android features are being tested in separate Sony and Streamer builds. The Streamer now uses
 this fork's Home-only helper instead of its previous custom Home watcher; its Pokémon media and app
 layout were preserved. The full standard product APK and every feature combination are not device
-accepted. The latest Sony prototype remains isolated from its selected Home. The webOS runtime/profile
+accepted. The owner-authorized Sony pilot is now selected as daily Home; the original launcher remains installed as a recovery route. The webOS runtime/profile
 adapter and hardware acceptance remain pending. See [Android profiles](ANDROID-PROFILES.md),
 [appearance integration](ANDROID-APPEARANCE.md) and [lightweight SHOWCASE candidates](SHOWCASE-LIGHTWEIGHT.md).
 Alpha 3 usability controls and their remaining native checks are described in [Android usability](ANDROID-USABILITY.md).
@@ -53,7 +54,7 @@ existing output file. Private configuration belongs in `product/private/`, which
 
 The exporter remains a desktop migration tool. The Android product source now also imports the shared
 library and separates each selected profile's native saved appearance, order and library shortcuts.
-That runtime integration still needs native UI and device testing; the webOS runtime adapter is pending.
+Native pilot testing is recorded in [validation](VALIDATION.md); the webOS runtime adapter is pending.
 
 ## Product rules
 

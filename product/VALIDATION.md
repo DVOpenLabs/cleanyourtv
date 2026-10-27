@@ -1,5 +1,29 @@
 # Local integration checks
 
+## Theme readability, native settings and saved Homes — 27 October 2026
+
+See [the feature contract](ANDROID-POLISH.md). This independent fork adds opt-in theme-aware solid text, refined focus motion, cinematic idle, on-TV profile creation and five named restore points per profile. Settings now uses a contextual menu/detail flow with five sections. An explicit Inputs shortcut offers real sources on an integrated TV and guidance on an external streamer. No runtime dependency, manifest permission, receiver or service was added by this batch.
+
+- **389 JVM tests pass** in both builds. Added cases cover exact idle deadlines, first-key wake/repeat/up consumption, system-key passthrough, solid theme contrast, snapshot validation and atomic repair, and profile-scoped choices. Snapshot column bounds also accept the existing imported two/three-column profile format.
+- **28 product Python tests pass**, including reachable grouped controls and desktop guards. The broader inherited suite was not rerun; its known failures below remain unresolved.
+- Standard lint: **0 errors, 109 warnings, 217 information entries**. Private trial: 0 errors, 115 warnings, 223 information entries. Not a warning-free build.
+- Standard APK **586,615 bytes**, SHA-256 `49d4785adb2730e023bb02d9c31e166f8107072e0f61fba385c50b32c397b7b5`. Private trial **587,391 bytes**, SHA-256 `ce4bc1a7a7f21404b1e43c3bba8c0f7ae4f9cf532872b5c5923c3c662e46bbd6`. Both remain below the unchanged 589,824-byte gate.
+- SDK AAPT2 resource-name compaction occurs before normal packaging/signing. All 31 locale/density configurations present in the previous installed artifact remain present, as do named view IDs and runtime banner names. Font files and translations were not stripped. Matching R8 mappings and resource-ID symbols are retained privately.
+
+### Native pilot evidence and limits
+
+The signed private pilot was updated in place on Sony BRAVIA 4K VH2 / Android 12 and Google TV Streamer (`kirkwood`) / Android 14. Its private weather/appearance and shell-only own-window readback are not shipped as public assets. This does not establish acceptance of the unmodified standard package or all theme/model combinations.
+
+On both devices, native D-pad checks and screenshots verified solid app-name glyphs, full-opacity header text, the focused card and focus-decoration alignment across all eight apps and back, all five settings detail pages, Back navigation, remote focus recovery after keyboard/touch interaction, and an unchanged editor snapshot/revision while browsing (excluding the live clock/weather header). Sony opened its existing real Inputs list without selecting a source. Streamer opened the explicit remote-control guidance; it does **not** enumerate or switch the attached LG's ports. Hardware-backed wallpaper posters safely skip CPU pixel access; enabling the option and returning Home were checked with the owner's existing media.
+
+Named-setup tests saved the baseline, changed launcher-only dim/position, restored the prior apps/order/position/dim, cleared stale Undo, renamed, cancelled deletion and deleted a test entry. These controller tests preceded the menu presentation change; final menu traversal was checked separately. A copied on-TV profile retained the same readable design and favorites, did not inherit recent-history consent, kept its saved setups separate from Current layout, and could be renamed/deleted. Test profiles were removed. This is not an import/file-picker, all-16-profile or real storage-failure acceptance result.
+
+Manual cinematic preview and an actual 30-second inactivity deadline hid apps, controls and the focus decoration while retaining the silent wallpaper. The first OK only woke Home and kept focus; it did not launch the hidden selection. Automatic idle was left **Off** for the owner's visual review. Theme-aware text and refined focus motion are enabled in this pilot. Each device retains **Original setup** plus a new **My setup** restore point for its finished appearance. Recent apps remain enabled in Current layout.
+
+Home from Netflix returned to the applied Home on both devices using injected input. Sony's pilot remains its selected Home, with its original launcher available as recovery. Streamer retains Google Home/setup/Cast and the already selected Home-only helper. Original config/media hashes, UID, saved Home/accessibility choice, display size/density, disabled package set, ADB, screensaver/timeout and boot count match the protection baselines after cleanup. No reboot or force-stop was used. Native launch/return checks do not prove protected video playback, casting or physical remote behavior.
+
+Real-remote/from-seat acceptance, actual protected playback, RTL/largest-font layout, fresh boot/casting and wider hardware combinations remain owner/release checks. No comparative CPU/RAM/FPS improvement is claimed. Personal artwork, screenshots, mappings, addresses and recovery APKs stay private. Neither LG was changed.
+
 ## Recent apps and wallpaper controls — 27 October 2026
 
 Community alpha 5 follow-up, independently implemented from the Projectivy/Home Deck/profile guides:

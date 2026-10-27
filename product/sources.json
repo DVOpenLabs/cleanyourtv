@@ -175,14 +175,14 @@
       "status": "README/setup/compatibility/root licence reviewed; full component/licence audit, adapter, package and LG hardware testing pending; nothing imported"
     },
     {
-      "name": "Projectivy wallpaper control reference",
+      "name": "Projectivy controls and settings design reference",
       "repository": "https://github.com/spocky/miproja1",
       "file": "README.md",
       "fileBlob": "cbeb220e8faf3d39de531b0354eb235fea8d32f3",
       "reviewed": "2026-10-27",
       "license": "Guide reference only; no source or APK content copied",
-      "reuse": "Independent native per-profile dim chooser using this launcher’s existing wallpaper renderer",
-      "status": "Public guide reviewed; no new permission, assets, SDK or service"
+      "reuse": "Independent native dim chooser, theme text palette and menu/detail settings presentation",
+      "status": "README, developer screenshot gallery and published settings capture reviewed; no application code, assets, dependency or service imported"
     }
   ]
 }
