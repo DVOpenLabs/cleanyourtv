@@ -78,10 +78,30 @@ Theme/media files, Home selection, permissions, services, system settings and st
 outside its write contract. In particular, it never calls the theme-push scripts that reset manual
 launcher appearance choices.
 
+The editor also offers **Top / Middle / Bottom** app position. This is a profile-scoped alignment
+choice: it does not change icon dimensions, app order, wallpaper or TV display scaling. **Use theme
+position** removes that override. Existing app-only clients and imported four-field app drafts preserve
+the current position. Position is reviewed alongside app changes and included in guarded Undo; app-draft
+exports continue to contain only app order, names and visibility.
+
+The Home illustration includes clock/date, weather and header buttons. An authorized read captures
+only allowlisted text from this launcher's visible Home, with a capture time; **Reload from TV** refreshes
+it. It does not capture another app's screen or poll weather. Weather appears when the installed Home
+has a weather header/companion; this does not add weather networking to the public launcher. If Home is
+not visible, the page labels the clock as PC time and weather as unavailable. Inputs and Settings reflect
+the current header configuration, and the depicted buttons do not open system settings. Tile artwork,
+responsive sizing and complex themes remain illustrative; an optional wallpaper is a local still.
+
+On the TV, open **Launcher settings → Home layout → App position**. The three choices start a 20-second
+preview with **Keep / Revert**; Revert is focused first. Timeout, cancellation, leaving Home or process
+death discards an unkept preview. The saved position stays unchanged on upgrade until explicitly chosen.
+Theme-default reset removes the override. Header clearance is retained on crowded layouts; a layout
+too tall for three distinct alignments remains scrollable rather than overlapping the clock.
+
 1. Load the selected TV/profile and edit a local draft.
 2. Preview the changes. The confirmation names the target and lists the changes.
 3. Apply only the exact reviewed draft. A private JSON backup is written first.
-4. Undo restores the previous app-only state, provided nothing relevant has changed since that Apply.
+4. Undo restores the previous app state and position, provided nothing relevant has changed since that Apply.
 
 Backups default to ignored `product/private/layout-backups/`; use `--backups` to choose another local
 directory. They include package names and personal app labels: do not commit or publicly upload them.

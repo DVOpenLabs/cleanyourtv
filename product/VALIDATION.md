@@ -1,4 +1,42 @@
-# Local integration checks - 26 October 2026
+# Local integration checks
+
+## App position and Home preview — 27 October 2026
+
+Community alpha 5 follow-up, using the same application identity and permissions:
+
+- **364 JVM tests pass** in public and private trial builds; six additional placement/rollback cases.
+- Public lint: **0 errors, 103 warnings, 184 informational entries**. Trial: 0 errors, 109 warnings,
+  190 informational entries. Neither build is warning-free.
+- Public APK: **578,759 bytes**, SHA-256 `25701e2856610514e914d6a2f4cbd9f0358657c1a73c5bb31189f31de68d9f86`,
+  11,065 bytes below the unchanged 589,824-byte gate. R8 now shortens names as well as shrinking code;
+  the exact build's `mapping.txt` must be retained locally to decode crash traces. No runtime reflection
+  or name-based class loading was found in the launcher source. Manifest/XML entry points retain AGP's
+  standard keep rules, and installed activity/provider/helper routes were exercised after the change.
+- **27 product Python tests pass**, including old app-only client compatibility, position-only review,
+  Apply/Undo, stale drafts and rejection of unreviewed changes. The inherited full Windows suite has
+  known failures recorded below; it was not rerun or declared green for this follow-up.
+- The connected web UI reviewed a position-only Bottom change on the Streamer, applied it with a
+  private backup, then restored the starting Top/theme position using Undo. The final UI showed weather,
+  clock/date and Settings with no pending draft. Inputs absence was explained by the current config.
+- On Sony BRAVIA VH2 Android 12 and Google TV Streamer Android 14, Top, Middle and Bottom were each
+  applied and undone. Evidence checks actual card coordinates after focus movement, not padding alone.
+  All eight favorites remained visible and reachable by injected D-pad events; icon dimensions, names
+  and ordering stayed unchanged. Both native selectors defaulted to Revert; explicit Revert and the
+  20-second timeout restored geometry without changing saved preferences/revision.
+- Captured Home header text included clock/date, both weather units and Settings. Sony Inputs was
+  visible; the Streamer retained its existing hidden Inputs configuration. Weather data stays in its
+  separate companion; the editor reads the rendered label and labels its capture time.
+- Native Netflix/STB launches released the wallpaper player and return to Home resumed it on both
+  devices; Streamer return exercised the existing narrow Home helper. Launch checks do not prove
+  protected streaming playback. No reboot was performed.
+- Home selection/helper, scale/density, screensaver, timeout, enabled debugging, boot count, disabled
+  packages, streaming-app data, UID and personal theme/media hashes were preserved. Sony's selected
+  original Home remained unchanged; updates were confined to its separate trial package.
+
+Fresh-boot, physical-remote, largest-font, RTL and every theme/carousel combination remain separate
+acceptance checks. Personal images, device snapshots, APKs, mappings and local addresses are not in Git.
+
+## Earlier checks — 26 October 2026
 
 Android version: **3.0-community-alpha3 (11)**. This identifies a product test build, not an upstream release.
 Feature switches remain off by default. No TV installation, settings write, Home handover or ADB action
