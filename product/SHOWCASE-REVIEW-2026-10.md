@@ -6,6 +6,19 @@ descriptions were considered by feature family. Component-source review is selec
 and in [sources.json](sources.json); this is **not** a security, licence or hardware audit of all 137
 repositories. Listing on SHOWCASE is not upstream endorsement.
 
+Follow-up on 27 October: upstream blob `57f490a24c7ebf23818e05330791ce8a799ea688` lists **140** projects.
+Compared with the reviewed 137-project blob above, its three added descriptions were checked:
+HabeshaTV (Amharic/Ethiopian calendar; no requested localization change), Cinema & OLED Edition
+(movie backdrops/grid dimming/blackout; network/API-key and panel-care work deferred), and macdock
+(dock/weather/now-playing/audio visualizer; no RECORD_AUDIO grant, overlay or renderer import).
+This is description triage, not source or hardware approval of those projects.
+
+The lightweight follow-up adds optional local recently opened apps using Home Deck as a design
+reference, a direct profile shortcut reusing the existing LiquiTvOs-inspired profile infrastructure,
+and a per-profile wallpaper-dim choice inspired by Projectivy's documented controls. These are
+independent native code. Favorites and Home geometry stay stable; no feed, model API or permission
+is added. See [the controls and limitations](ANDROID-COMPANION.md).
+
 The following priorities are our engineering judgment, not popularity scores. A feature earns its
 place by removing remote presses or making Home clearer; it should not turn Home into another feed.
 
@@ -27,7 +40,7 @@ place by removing remote presses or making Home clearer; it should not turn Home
 | OLED idle care — Cosy Home, ExtremeSlimTV | Later: bounded launcher-only dim/shift with explicit opt-in | Never alter the TV's pixel cleaning, panel care, standby or power settings; cannot guarantee burn-in prevention |
 | Movies/Explore — CleanYourTV UI, Forslag, kermes-tv | Later optional companion if title/service discovery is wanted | Provider terms, keys, cache/network budgets and reliable links first; no invented availability |
 | Continue watching / app channels — PeachOS, TCL GTV, Vibe | Investigate actual provider data before selecting | Do not promise universal Netflix/STB progress or private-account access |
-| Recent/frequent apps — Home Deck, Google TV-style forks | Later optional app history; keep pinned favorites stable now | Local launcher launches only; no UsageStats grant or silent reordering |
+| Recent/frequent apps — Home Deck, Google TV-style forks | Implemented optional six-app recent menu; pinned favorites stay stable | Local launcher launches only, profile-scoped package IDs; no UsageStats grant or silent reordering |
 | Phone remotes and upload panels — Webmote, Casa, TV Remote | Desktop editor first; phone control remains separate | TV-side server, authentication and key/text access need their own review |
 | Voice and AI — Chill TV, setup tools | Draft import implemented; AI setup proposals can be reviewed through it | Fixed voice commands are not an LLM; no microphone, model, paid API or cloud dependency added |
 | RAM cleaners / task managers / forced stopping | Excluded from this batch | Do not disrupt streaming to make an unmeasured speed claim |

@@ -148,7 +148,7 @@
       "commit": "6ae44996b2970b1a49e49c0b1e505f17bb458bda",
       "license": "MIT code; fonts and fan artwork have separate notices",
       "reuse": "Jump To README design reference; extend existing native panel, no code/art/fonts imported",
-      "status": "Guide/licence reviewed; independent native quick-actions entry and app-search implemented"
+      "status": "Guide/licence reviewed; independent native quick-actions entry and app-search implemented; recent-app guide reviewed for independent opt-in package-only MRU menu"
     },
     {
       "name": "Readable Home review",
@@ -173,6 +173,16 @@
       "license": "Root MIT reviewed; webOS/transitive notices require audit before import",
       "reuse": "Plan a manual/Quick Access web app first; retain native LG Home",
       "status": "README/setup/compatibility/root licence reviewed; full component/licence audit, adapter, package and LG hardware testing pending; nothing imported"
+    },
+    {
+      "name": "Projectivy wallpaper control reference",
+      "repository": "https://github.com/spocky/miproja1",
+      "file": "README.md",
+      "fileBlob": "cbeb220e8faf3d39de531b0354eb235fea8d32f3",
+      "reviewed": "2026-10-27",
+      "license": "Guide reference only; no source or APK content copied",
+      "reuse": "Independent native per-profile dim chooser using this launcher’s existing wallpaper renderer",
+      "status": "Public guide reviewed; no new permission, assets, SDK or service"
     }
   ]
 }

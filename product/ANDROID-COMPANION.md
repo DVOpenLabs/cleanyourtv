@@ -45,6 +45,37 @@ tested Sony Android 12 build it opens Remotes & accessories directly. On the tes
 Android 14 build those direct routes are unavailable; it opens TV Settings and explains where to go.
 It does not scan, request Bluetooth grants, bypass startup verification, select a device or pair one.
 
+## Recently opened apps, profiles and wallpaper dimming
+
+**Launcher settings → Apps & profiles → Remember recently opened apps** is off by default. Enabling
+it explicitly remembers up to six package IDs opened successfully through Home tiles or the app library.
+**Quick actions → Recently opened apps** shows newest first, using the current profile's app names and
+omitting hidden, disabled, removed or unavailable apps. Reopening an app moves it to the front without
+changing favorites. It opens the app, not a promised episode/playback position. Dedicated remote app
+buttons, other launchers and viewing history are not tracked. There is no UsageStats permission,
+notification access, timestamp log, service or network request.
+
+History uses a small separate preferences file per launcher profile, so recording a launch does not
+invalidate an unrelated desktop app draft. **Clear recently opened apps** clears that profile's list;
+switching the feature off clears it and removes the optional flag. Failed saves/clears repair the
+in-memory preference state. This history is independent of the pre-existing cinematic shelf's
+`LastOpened` timestamps; it neither imports nor clears those older shelf records.
+
+When the existing `local_profiles` capability is enabled, holding OK on the header Settings button
+offers **Switch launcher profile** directly. Quick actions has the same shortcut. It uses the existing
+profile library and chooser; import remains in Launcher settings. It switches launcher preferences only.
+Profile import/setup and Google/streaming accounts are unchanged. The two owner trial configurations
+currently leave this capability off; they do not gain a profile row or a fabricated user automatically.
+
+**Launcher settings → Wallpaper → Wallpaper dimming** offers Follow configuration, 0%, 15%, 30%, 45%
+and 60%. The existing still/video renderer applies it only to the background. Icons, labels, app layout,
+wallpaper files, the screensaver and the TV's actual brightness setting are preserved. The choice is
+scoped per profile; Follow configuration removes it, and explicit theme-default reset clears it.
+
+These are independent implementations inspired by Projectivy's wallpaper controls, Home Deck's recent
+apps and LiquiTvOs profile access. Quick actions can scroll to keep added entries reachable on shorter
+screens. No new dependencies, permissions or Home routing services are introduced.
+
 ## Optional audio indicator
 
 **Launcher settings → Audio-playing indicator** is off by default and stored per launcher profile.

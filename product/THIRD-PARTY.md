@@ -34,6 +34,11 @@ as design references. Their MIT licences were reviewed. No panel installer/theme
 scanner, NowPlaying metadata/browser code, WebView shell, fonts or fan artwork was copied from these
 projects. The controls extend the native launcher and QuickSettingsActivity already in this fork.
 
+The later package-only recent menu, profile shortcut and wallpaper dim chooser are also independent
+native code. Design references are Home Deck's Jump back in guide, the existing LiquiTvOs profile
+guide and [Projectivy's documented wallpaper controls](https://github.com/spocky/miproja1).
+No Projectivy APK internals/source, media visualizer, permission flow, assets or fonts were imported.
+
 Readable Home and the Chromecast glass library were reviewed for readability/library design, without
 copying their restyles, fonts or source changes. The SamuelSHernandez webOS edition is a planning
 candidate only: its root licence and guides were reviewed, while a full webOS/transitive licence audit

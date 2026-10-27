@@ -1,5 +1,10 @@
 # Integration roadmap
 
+**27 October follow-up:** Top/Middle/Bottom alignment and the fuller desktop Home preview are
+implemented. The next lightweight controls add optional recently opened apps, direct profile access
+when profiles are enabled, and native wallpaper dimming. No automatic profile or appearance change is
+part of an upgrade. See [controls](ANDROID-COMPANION.md) and dated [validation](VALIDATION.md).
+
 **27 October alpha-5 update:** [Quick actions, local app search, Bluetooth settings/audio status and
 the guarded desktop app editor](ANDROID-COMPANION.md) are implemented. Sony and Streamer native tests
 and remaining acceptance are in [VALIDATION.md](VALIDATION.md). The [current SHOWCASE review](SHOWCASE-REVIEW-2026-10.md)

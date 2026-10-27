@@ -1,5 +1,42 @@
 # Local integration checks
 
+## Recent apps and wallpaper controls — 27 October 2026
+
+Community alpha 5 follow-up, independently implemented from the Projectivy/Home Deck/profile guides:
+
+- **376 JVM tests pass** in public and private trial builds. New cases cover bounded/deduplicated MRU,
+  malformed storage, per-profile history naming and choice isolation, dim fallback, exact failed-save
+  repair, and failed history clear. **28 product Python tests pass**, including settings reachability
+  and the native Quick actions scroll container. The broader inherited suite was not rerun; its known
+  failures remain recorded below.
+- Public lint: **0 errors, 106 warnings, 196 information entries**. Trial: 0 errors, 112 warnings,
+  202 information entries. Public APK **583,055 bytes**, 6,769 bytes below the unchanged gate;
+  SHA-256 `54d5864e1526fbc7fc1655ba4d518bc91627bb617157834730b39051fe8ebe43`.
+  No added runtime dependencies, permissions, Home helper, polling service or launcher networking.
+  Matching R8 mappings are retained locally, outside Git.
+- Native tests passed on Sony VH2 Android 12 and Google TV Streamer Android 14: choose 30% wallpaper
+  dimming and restore Follow configuration; explicitly enable recent apps; launch Netflix and STB
+  through favorite tiles; verify newest-first package records; reopen STB from the recent menu with
+  no duplicate; clear the list; disable it; open Netflix again and confirm no new record. Original app
+  layout, actual tile dimensions, Top position and personal media were retained. History was left off
+  and empty, and wallpaper dimming at its original theme value.
+- The direct profile shortcut is capability-gated. Both owner configurations keep `local_profiles`
+  off, so no feature flag/library/account was changed to expose it. Profile preference isolation and
+  failed selection remain JVM-tested; live multi-profile switching/import through the new shortcuts
+  is **not claimed** as hardware-tested.
+- Native app transitions released and resumed the silent wallpaper player. Protected Home/helper,
+  display scaling/density, screensaver, timeout, disabled packages, UID, boot count, enabled ADB and
+  original launcher/media hashes were unchanged. No reboot, casting acceptance or actual protected
+  playback result is inferred from app launches. Physical remote, large-font/RTL and every style
+  combination remain acceptance checks.
+- Browsing all five settings categories, entering controls and returning with Back left saved layout,
+  profile and revision unchanged on both devices. The editor header's capture time was excluded from
+  that equality check because it is read-only and time-varying.
+
+Current SHOWCASE description refresh: blob `57f490a24c7ebf23818e05330791ce8a799ea688`, 140 projects;
+the three descriptions added after the earlier 137-project review were triaged. This is not a source
+or hardware audit of all projects; see [the review](SHOWCASE-REVIEW-2026-10.md).
+
 ## App position and Home preview — 27 October 2026
 
 Community alpha 5 follow-up, using the same application identity and permissions:
