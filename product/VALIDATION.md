@@ -82,6 +82,7 @@ screensaver, timeout and external media hashes were preserved.
 
 Native screenshots show the enabled setting and both units in the slideshow preview, which shares its
 Scene with the Dream service. This batch did not force the system Dream service to start; its selection
-and timing were left unchanged. Physical readability feedback is pending. Screenshots and personal
+and timing were left unchanged. The owner confirmed both units were comfortably readable on the
+launcher and screensaver preview, without overlap. Screenshots and personal
 artwork remain private. The launcher header's dual-unit trial is still in the isolated local preview,
 not the public product launcher; its existing 324 JVM tests and release lint pass.

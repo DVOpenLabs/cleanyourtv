@@ -45,3 +45,41 @@ Alpha 3 implements **focus contrast + extra spacing**, followed by the optional 
 picker. These source integrations remain off by default and need native/physical acceptance; no TV was
 changed. See [the usability contract](ANDROID-USABILITY.md). Whole-row navigation, the audio indicator
 and Bluetooth changes remain candidates rather than bundled features.
+
+## Follow-up review — 27 October 2026
+
+The current upstream SHOWCASE lists 137 projects. That does **not** mean every useful feature has been
+integrated or that every repository has had a source/security/licence audit. The following are still
+worth evaluating. This section is a shortlist, not authorization to install them or change a TV.
+
+| Priority | Candidate | Useful adaptation for this fork | Keep it light |
+|---|---|---|---|
+| 1 | [CleanYourTV Panel](https://github.com/Pagamase/cleanyourtv-panel/blob/main/README.md) | Arrange apps and edit names from a computer, with a preview and per-device backup | The panel documents Python-standard-library-only operation and no extra TV app. Its existing theme push clears some manual launcher choices, so a preservation-aware apply/Undo path must be designed before reuse. |
+| 2 | [Bluetooth pill](https://github.com/nikhiltalreja/cleanyourtv/tree/bluetooth-pill-key-remaps) | A quick route to the TV's existing Bluetooth screen | Start with a settings shortcut. Pairing scans, battery reporting and their permissions need separate review. |
+| 3 | [XMB Home](https://github.com/amachador/xmb-home/blob/main/README.md) | A small indication that audio is still active | A generic indicator is useful without song metadata or notification access. Never infer a track title or source app from the last app launched. |
+| 4 | [Cosy Home](https://github.com/oliverjwroberts/cosy-home-tv) | Subtle pixel shifting or dimming of static launcher elements when idle | Optional, bounded and separate from the TV's own panel-care settings. Hardware acceptance is required; this cannot guarantee prevention of burn-in. |
+| Optional | [CleanYourTV UI](https://github.com/matheus-caldeira/cleanyourtv-ui/blob/main/README.md) | Movie search and a title page with supported service links | Its TMDB/Wikidata catalogue is not AI and is substantially broader than an app launcher. Keep any adaptation in an optional companion; account for API terms, keys, image-cache limits and incomplete title links. Do not promise universal watch progress across streaming apps. |
+
+### AI and voice
+
+The most useful proposed AI feature is a **plain-language setup assistant on the computer or phone**:
+for example, “make a kids profile with these four apps, larger labels and this wallpaper.” It would
+produce a schema-validated proposal, show the exact changes and target device/profile, and require an
+explicit Apply with backup and Undo. The TV needs only the resulting configuration, not a model SDK.
+This is a proposal, **not implemented AI functionality**. Provider, data sent and any cost still need
+to be selected and disclosed; no paid service is being invoked by this review.
+
+[Chill TV](https://github.com/AlimangoStudio/chill-tv/blob/main/README.md) documents named voice commands
+and a computer remote. Its Windows remote uses Windows' offline English speech recognizer; the Mac
+uses Apple's recognizer, on-device where supported, and only commands go to the TV. These documented
+fixed commands should not be presented as proof of a general-purpose LLM assistant. A reusable version
+would be opt-in, show when the microphone is listening and retain ordinary remote navigation.
+
+Smart movie suggestions such as “a short anime available on my services” are a possible later companion
+feature, after reliable catalogue/availability data exists. Generated answers must not invent streaming
+availability or imply they can inspect Netflix/STB EMU profiles. No AI, catalogue or remote-server
+dependency has been added to the base launcher in this review.
+
+The recent weather-header and appearance changes on the owner's devices are isolated prototypes.
+Their public configuration/provider integration remains work in progress; they are not additional
+finished SHOWCASE imports. The LG helper also still needs full packaging and actual LG-device testing.
