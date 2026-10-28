@@ -23,6 +23,8 @@ Android launcher lives in `launcher/`. The first webOS recovery patch/source lay
 - Native Android style preview, timed Revert and scoped Undo, inherited from the tested Sony prototype.
 - A shared profile format, desktop exporter and Android native profile picker with offline library import.
 - Bottom carousel with native focus/preview/Undo; bounded offline visual themes; optional silent local video.
+- A profile-specific [wallpaper playlist](ANDROID-COMMUNITY.md#wallpaper-playlists) with up to eight local
+  backgrounds, sequential/shuffle order and a Home-only interval that pauses while other apps are open.
 - Opt-in dual-contrast focus, per-profile extra spacing, global HDMI visibility and a remote TV-button picker.
 - An optional [Google TV Streamer Home-only redirect](STREAMER-HOME.md), inactive until explicitly selected, replacing a separate custom Home watcher.
 - Alpha 5 [Quick actions, offline app search, a native Bluetooth shortcut and optional audio status](ANDROID-COMPANION.md).

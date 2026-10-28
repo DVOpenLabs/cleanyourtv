@@ -59,6 +59,25 @@ wallpaper. Apply is explicit and guarded against a stale profile. Thumbnail work
 and bounded decoding. The browser does not auto-play videos. Existing import, silent live playback,
 wallpaper dimming and reduced-motion behavior stay in their existing controllers.
 
+## Wallpaper playlists
+
+Wallpaper → Wallpaper playlist rotates between up to eight imported local backgrounds. Import packs
+through Manage offline themes first; each supplies a still picture and may include a silent video.
+Choose wallpapers, arrange their order, then Apply. The editor defaults to 15 minutes and also offers
+1, 5, 30 and 60 minutes, sequential order or shuffle without immediate repeats. Cancel discards the draft.
+The feature is off by default. Turning it off returns to the profile's original single wallpaper.
+
+Rotation changes only the background. It does not select the other pack's theme configuration, app
+order, typography, row position or profile. Each profile retains its own playlist, current entry and
+remaining interval. Saved setups and Recent changes include playlist choices, but not playback progress.
+Referenced packs are protected from removal while a profile, setup or recovery entry still uses them.
+
+The interval counts resumed Home time. Opening another app pauses the clock and releases the video
+player; returning continues the same entry and remaining time. There is one active video player, with
+a still fallback if video is disabled, reduced motion is enabled or playback is unsupported. The
+playlist also works in the optional category preview. It needs no network, service or new library.
+Personal videos are separate local imports and are not included in the APK or this repository.
+
 ## Recent changes
 
 Backup & restore → Recent changes keeps up to five automatic points per launcher profile, within a

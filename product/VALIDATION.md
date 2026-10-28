@@ -1,5 +1,42 @@
 # Local integration checks
 
+## Wallpaper playlists — 27 October 2026
+
+The full build adds an off-by-default, profile-specific local-background playlist. See
+[the feature contract](ANDROID-COMMUNITY.md#wallpaper-playlists). Public full release: **633,395 bytes**,
+SHA-256 `63354d87d611af0a55e9f6b2680dae7f0ba6012416999fef5199b8c83bf37412`.
+Personalized pilot: **635,491 bytes**, SHA-256
+`d80211cb594429533e1d602c8a2c95d449ee223e4305495fbbbaf20fb9089b83`.
+Both pass **424 JVM tests** with zero lint errors (public: 134 warnings, 235 information; pilot:
+140 warnings, 241 information). The reference build passes **392 JVM tests**, zero lint errors
+(111 warnings, 228 information), and remains **588,531 bytes**, within the unchanged 589,824-byte gate.
+Its SHA-256 is `2f01133504d603ab3321f53f68ed48804e063dde8786ddeba9e325c1c1c21994`.
+No runtime dependency, manifest permission, service, network client or workflow was added.
+
+Native injected-input tests on Sony BRAVIA 4K VH2 / Android 12 and Google TV Streamer / Android 14 used
+temporary launcher profiles, then restored the owner profile and deleted those test profiles:
+
+- The default interval was 15 minutes. A changed draft canceled without preference or recovery writes.
+- Applying two silent clips at a one-minute interval allocated one native video player. Opening Netflix
+  released it; 70 seconds outside Home consumed no playlist time. Home resumed the same entry with the
+  saved remaining interval, then an actual deadline changed to the second clip with one player.
+- Category preview played the same playlist; leaving released its player. Returning to the grid shared
+  the saved playlist position. Rotation did not change the selected theme, app order or row position.
+- Original owner preferences, profiles, app layout and saved order/library files matched after cleanup.
+
+Two additional silent landscape clips were imported without selecting their theme settings. Both
+started in the native player on each TV in a separate temporary profile, with a real timed transition
+between them. After cleanup, the owner's four-background sequence was applied at 15 minutes through
+the native editor, with each TV's previous wallpaper first. All other captured owner preferences,
+app layout, row position and saved order/library files matched the baseline. The short-interval test
+exercises the timer; this is not a separate measured 15-minute wait. All source clips contain no audio
+stream. Visual acceptance of every generated character effect remains with the owner.
+
+These checks establish the tested lifecycle and timer behavior, not a CPU/RAM benchmark, protected
+streaming playback, every video codec, seamless video loops, physical remote acceptance or new reboot
+acceptance. Largest-font/RTL layout and other TV models remain unaccepted. Media and device screenshots
+remain private; the default public package was built but not installed on either personalized pilot.
+
 ## DV Freedom Launcher branding — 27 October 2026
 
 The full product now uses the selected **DV Freedom Launcher** name in its application label,
