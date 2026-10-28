@@ -19,6 +19,9 @@ still-pending LG hardware acceptance. The optional Home helper remains a separat
 
 ## What exists now
 
+- Alpha 10 settings: persistent category navigation, readable Outfit weights, aligned value rows,
+  clear focus, local alias search and previewable position/size/spacing controls. See [settings details](ANDROID-COMMUNITY.md#settings-that-work-with-a-remote).
+
 - Alpha 9 [guided/AI-draft setup](AI-SETUP.md), local avatar colours, a profile-scoped layout-edit PIN,
   optional Watch Next shelves and local-time wallpaper scenes. See [controls and limits](ANDROID-COMMUNITY.md#guided-setup-profiles-and-content-alpha-9).
 - An independent [manual-launch webOS preview](../platforms/webos/LAUNCHER.md), with shared-profile

@@ -1,5 +1,48 @@
 # Local integration checks
 
+## Settings layout and readability — 28 October 2026
+
+Alpha 10 adds persistent category navigation, aligned icon/name/value rows, explicit Outfit weights
+with the existing locale fallback, stronger focus separate from saved selections, inline position/row/
+spacing drafts, a less nested text-size preview and local alias search. Existing Home choices remain
+selected on update. No runtime dependency, permission, background service or network client was added.
+
+The public full APK is **681,191 bytes**, SHA-256
+`069ac593e1f5e7a57500b8ecb772d8e4e9e44f7f7c80d65b2ff7cf83f23903a9`. The personalized pilot is **684,139 bytes**, SHA-256
+`7b4a18eb7888352c8cf64d58b6baf5286d06df0a9c73b571c43ccab97b0fa946`. Both pass **454 JVM tests** and zero-error lint.
+The reference build is unchanged byte for byte: **588,815 bytes**, SHA-256
+`74d85869c030b51724725bac66ad38af1741daa6f24ee52268a79360ebdfce8e`, **392 JVM tests**, zero-error lint and the unchanged
+**589,824-byte** gate. **35 desktop product tests** pass, including their local-loopback cases.
+
+Functional checks ran on Sony BRAVIA 4K VH2 / Android 12 and Google TV Streamer / Android 14,
+using fresh private baselines and disposable launcher profiles:
+
+- Every category, nested Appearance navigation, Back and both rail/list edges were exercised through
+  the native UI. Values, profile scope and Inputs were visible. Bright/dark layout illustrations use
+  still images. No original app layout or background was selected by browsing.
+- Horizontal position drafts wrote nothing; the existing timed Home preview reverted without saving.
+  Row-size and spacing changes saved in a disposable profile only. Text-size drafts cancelled without
+  writes, and explicit Apply saved that test profile's clock size. Daily profiles were restored and
+  both disposable profiles removed.
+- Settings search handled HDMI, font and an empty-result query. Results navigated to the proper
+  existing control without executing it. Preference values, history and editor revision remained
+  unchanged throughout browsing/search/Cancel tests.
+- Native captures exposed and corrected thin raw-font loading, an overbroad icon matcher and a
+  touch-focus-only first click. Choice-button focus was strengthened separately from saved selections.
+  Inherited positions and imported custom spacing cannot falsely check a preset. The latter has an
+  explicit JVM regression. The final update adds stable-dialog/no-write smoke checks on both devices.
+- Existing identity/certificate, owner choices, app order, external config/media hashes, Home/helper
+  selection, display size/density, screensaver/timeout, disabled packages and boot count were preserved.
+  Debugging stays enabled as requested. No reboot, force-stop, uninstall or system setting change was run.
+
+The functional pass spanned alpha-10 pilot updates; the final preset-state/focus refinements retain
+that contract with JVM coverage and final on-device smoke checks. These are injected/native UI tests,
+not physical-remote or protected-streaming-playback acceptance. Seating-distance readability, held
+remote buttons, largest system fonts, RTL and longer-term use still need owner/hardware review.
+LG source and settings were not changed in this Android presentation pass. Screenshots, recovery APKs,
+app inventories, device addresses and personal media remain private. Public upstream safety scripts,
+reference source/manifest, CI and the reference size gate are unchanged.
+
 ## Guided setup and household controls — 28 October 2026
 
 Alpha 9 adds optional guided/AI-draft setup, local avatar colours, a profile-scoped edit PIN,

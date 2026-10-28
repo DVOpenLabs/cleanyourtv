@@ -7,13 +7,38 @@ are independent. See [validation](VALIDATION.md) for dated device results and re
 
 ## Settings that work with a remote
 
-Settings has seven short sections: Appearance, Apps & rows, Wallpaper, Profiles, Remotes & inputs,
-Backup & restore, and System. Appearance opens Layout, Text & clock, and Focus & motion. The context
-pane explains the focused choice; rows show their current value. Back returns one level, preserving the
-focused row. Browsing a page writes nothing. Existing preview, confirmation and save handlers remain
-behind the new navigation.
+Alpha 10 keeps a compact category sidebar visible while the wider controls panel shows Appearance,
+Apps & rows, Wallpaper, Profiles, Remotes & inputs, Backup & restore and System. Setup help and Home
+experience are also directly reachable. Icons, semibold headings, regular-weight body text and readable
+current values use Outfit with the existing locale fallback. Focus has a strong border; the active
+category has a quieter saved-selection treatment. There are no outlined text labels.
 
-Text sizes offers separate clock, header and app-name previews at 85%, 100%, 110% and 120%. Apply saves
+Rows align their icon, name, current value and action affordance. Selected help and light/dark still
+illustrations stay below the scrollable controls. The profile name is always visible; shared input,
+remote and system controls are marked separately. These illustrations show layout/spacing, never run
+another video decoder and do not establish contrast for every frame of a moving wallpaper.
+
+**Search settings** searches local labels, help and category paths, including aliases such as HDMI for
+Inputs and font for Text sizes. Queries are limited to 120 characters and results to 24. A result opens
+the owning section and focuses its control; it never executes that control or stores search history.
+
+**App position**, **Apps per row**, **Rows below favorites**, **Favorites background** and **Extra tile
+spacing** use labelled segmented choices where applicable. Left/Right changes the local draft; OK
+confirms it. A check denotes the saved choice, while the brighter chip is the preview. An inherited
+position is labelled as following configuration rather than falsely marking Top as saved. Position
+retains its existing timed Home preview and Keep/Revert. Spacing uses the existing profile key and
+rejects an intervening profile/revision change. Back discards these unsaved drafts. Existing immediate
+save controls retain their previous save behavior; the page does not imply a global Apply button.
+
+Animation/live-video switches display their on/off state without a nested focus target. Numeric,
+position and spacing previews do not save on horizontal navigation. Less-used effects are inside
+Advanced under Focus & motion. Unsupported controls are omitted. Up/Down clamps at each rail/list edge,
+Back returns toward categories; Left does the same outside segmented controls. Back from categories
+closes settings. Horizontal direction
+follows the existing RTL configuration. Browsing writes no launcher preferences or history.
+
+Text sizes offers separate clock, header and app-name previews at 85%, 100%, 110% and 120%, with all
+four choices visible for each control instead of opening another picker. Apply saves
 the current profile; Cancel keeps its previous sizes. Theme sizes removes the override. Existing app-name
 visibility and solid light/dark/automatic theme text remain available. Automatic contrast follows theme
 configuration, not every changing video frame; test busy wallpapers from the seating position.

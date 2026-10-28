@@ -40,7 +40,14 @@ The task integration targets this repository's pinned AGP 8.5.2 / build-tools 34
 
 ## Settings presentation
 
-The native settings menu now follows a menu/detail pattern rather than showing a category rail and a large form simultaneously. Five short rows use consistently sized existing icons and small chevrons. A contextual title and explanation stay separate from the interactive list. Back returns to the menu before closing; numeric controls retain Left/Right navigation and the currently saved value remains visible. Neutral dark surfaces and solid text avoid depending on the personal wallpaper behind a settings page. This uses the existing native widgets and fonts, without a new UI framework.
+The alpha-10 native settings menu keeps a compact category sidebar and a wider controls panel. Rows
+align icons, names, current values and chevrons; the footer explains the selected control. Outfit uses
+explicit regular/semibold weights with the existing locale fallback. A strong border identifies focus,
+separately from the active category or saved option. Position, row size and spacing offer local drafts,
+and text sizes keeps its preview/Apply contract. Local alias search navigates without executing an
+action. See the [current settings contract](ANDROID-COMMUNITY.md#settings-that-work-with-a-remote).
+Settings uses opaque neutral surfaces so its readability is independent of the wallpaper. There is no
+new UI framework, runtime dependency, network access, background task or stored search history.
 
 This is an independent implementation informed by [Projectivy’s feature overview](https://github.com/spocky/miproja1), its [developer-published screenshots](https://play.google.com/store/apps/details?id=com.spocky.projengmenu), and a [published settings capture](https://quantrimang.com/dung-projectivy-launcher-tren-google-tv-210954). No Projectivy code or artwork is bundled. This fork does not claim its full feature set.
 
