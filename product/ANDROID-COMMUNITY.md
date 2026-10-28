@@ -142,10 +142,56 @@ Build locally from source; no APKs or proprietary assets are published in this r
 
 Without `communityFeatures`, the reference build retains its original controls and tiny no-op product
 hooks. Its existing 589,824-byte gate and CI are unchanged. The full product intentionally exceeds that
-reference limit with the owner’s approval. No new runtime library, manifest permission, service, network
-client or polling loop was added. Timers for clock/idle run only with their Home activity resumed.
+reference limit with the owner’s approval. Alpha 8 added no runtime library, manifest permission, service, network
+client or polling loop. Alpha 9 adds only the optional full-build TV-listings permission described below. Timers for clock/idle run only with their Home activity resumed.
 
-Public weather/header integration, content-provider permission design for genuine Continue Watching,
-and LG webOS packaging remain separate work. Recent apps is not viewing progress, and profiles do not
+Public weather/header packaging and LG hardware acceptance remain separate work. The alpha-9
+content-provider boundary is described below. Recent apps is not viewing progress, and profiles do not
 switch Netflix/Google accounts. Optional AI needs a useful task and explicit provider/data consent;
 there is no always-running assistant or paid inference in this build.
+
+
+## Guided setup, profiles and content (alpha 9)
+
+**Setup help** offers four optional steps: look, apps, comfort and review. Back/Cancel never saves;
+Apply defaults to a new local profile. Imported AI drafts use the same allowlist and exact app inventory,
+are staged rather than applied by the desktop bridge, and reject stale Home/profile revisions. Nothing
+is sent to an AI service by the launcher. See [AI setup help](AI-SETUP.md).
+
+**Profiles** now has a local avatar chooser, a separate switcher and an optional edit PIN. The PIN is
+salted PBKDF2, profile-scoped and excluded from saved setups, history, profile exports and AI templates.
+Five failed attempts impose a thirty-second retry delay; a successful unlock lasts five minutes.
+This is a convenience edit lock, **not** a streaming-account/content restriction or Android security
+boundary. Other profiles and TV system settings remain accessible. Keep your PIN yourself; Android's
+app-data controls can reset it. No owner PIN is configured by an upgrade.
+
+**Scene schedules** live under Wallpaper and start off. Create up to eight non-overlapping local-time
+windows from existing playlist wallpapers. Midnight windows belong to their start day. A schedule
+changes only the displayed background while Home is visible; it neither wakes the TV nor switches
+profiles, apps or theme choices. Normal rotation pauses during a scene and resumes afterward. Removing
+a scheduled wallpaper from the playlist is rejected until its windows are removed. No new scheduler,
+alarm, background service or second video player is installed.
+
+**Content shelves** starts off in every new profile and is excluded from copied/exported setups.
+The full build declares Android's dangerous `READ_TV_LISTINGS` permission, requested only through
+its explicit content settings. It does not request usage access, all-EPG privileged access or account
+permissions. After granting access, choose Show shelf separately for that profile. Disabling the shelf
+does not silently revoke Android's app-wide permission; revoke it in Android App permissions if desired.
+The reference manifest remains unchanged and has no TV-listings permission.
+
+The shelf reads searchable [Watch Next metadata](https://developer.android.com/reference/android/media/tv/TvContract.WatchNextPrograms)
+once per foreground session, with at most 96 rows inspected and 12 cards retained in memory. It filters
+hidden/unavailable apps, old/future entries, invalid links and nearly-complete Continue items when
+progress is available. Types remain labelled Continue / Up next / New episode / Watchlist; no progress
+is invented. A deep link is rebuilt without foreign components, grants, selectors or arbitrary extras
+and must resolve inside the originating app. Failures are reported without opening an unrelated app.
+
+Glass/Clean/Cinema show a row in free space outside favorites; the existing grid retains its geometry
+and offers Browse shared items from content settings. Empty/unavailable shelves collapse. The first
+version uses local app artwork and provider titles, not downloaded posters. It stores no watch history,
+sends no titles off-device and cancels work/clears cards when hidden. Actual coverage depends on each
+app/provider and firmware; there is no promise of Netflix or any other service exposing its items.
+
+Settings omits controls belonging only to the old grid when a new experience is active, retains current
+values and focus memory, and gives modal controls a consistent high-contrast style. The still settings
+illustration does not open another video decoder.

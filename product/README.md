@@ -13,10 +13,16 @@ The GitHub fork name and the reference build remain unchanged; the original lice
 
 The goal is one maintained repository with Android and LG webOS implementations, consistent settings,
 local profiles and media formats. Platform-specific Home handling and builds remain separate. The current
-Android launcher lives in `launcher/`. The first webOS recovery patch/source layer lives in
-`platforms/webos/`; **the complete webOS launcher/helper is not integrated or deployable yet**.
+Android launcher lives in `launcher/`. The webOS source and manual-launch preview live in
+`platforms/webos/`; [its guide](../platforms/webos/LAUNCHER.md) distinguishes local source checks from
+still-pending LG hardware acceptance. The optional Home helper remains a separate reviewed layer.
 
 ## What exists now
+
+- Alpha 9 [guided/AI-draft setup](AI-SETUP.md), local avatar colours, a profile-scoped layout-edit PIN,
+  optional Watch Next shelves and local-time wallpaper scenes. See [controls and limits](ANDROID-COMMUNITY.md#guided-setup-profiles-and-content-alpha-9).
+- An independent [manual-launch webOS preview](../platforms/webos/LAUNCHER.md), with shared-profile
+  import review, local draft setup, native public app-launch checks and mock-service regression tests.
 
 - Alpha 8 [Home experiences](ANDROID-COMMUNITY.md#home-experiences-alpha-8): Glass, Clean and Cinema,
   with a navigable 20-second preview, explicit Keep/Revert, shared app/media stores and local app search.
@@ -39,8 +45,7 @@ Android launcher lives in `launcher/`. The first webOS recovery patch/source lay
 Selected Android features are being tested in separate Sony and Streamer builds. The Streamer now uses
 this fork's Home-only helper instead of its previous custom Home watcher; its Pokémon media and app
 layout were preserved. The full standard product APK and every feature combination are not device
-accepted. The owner-authorized Sony pilot is now selected as daily Home; the original launcher remains installed as a recovery route. The webOS runtime/profile
-adapter and hardware acceptance remain pending. See [Android profiles](ANDROID-PROFILES.md),
+accepted. The owner-authorized Sony pilot is now selected as daily Home; the original launcher remains installed as a recovery route. The first webOS runtime/profile adapter is source-tested; packaging passes; hardware acceptance remains pending. See [Android profiles](ANDROID-PROFILES.md),
 [appearance integration](ANDROID-APPEARANCE.md) and [lightweight SHOWCASE candidates](SHOWCASE-LIGHTWEIGHT.md).
 Alpha 3 usability controls and their remaining native checks are described in [Android usability](ANDROID-USABILITY.md).
 The [dated SHOWCASE review](SHOWCASE-REVIEW-2026-10.md) explains the alpha-5 selection and what remains
@@ -67,7 +72,7 @@ existing output file. Private configuration belongs in `product/private/`, which
 
 The exporter remains a desktop migration tool. The Android product source now also imports the shared
 library and separates each selected profile's native saved appearance, order and library shortcuts.
-Native pilot testing is recorded in [validation](VALIDATION.md); the webOS runtime adapter is pending.
+Native pilot testing is recorded in [validation](VALIDATION.md); the webOS adapter still needs hardware acceptance.
 
 ## Product rules
 

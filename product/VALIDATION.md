@@ -1,5 +1,65 @@
 # Local integration checks
 
+## Guided setup and household controls — 28 October 2026
+
+Alpha 9 adds optional guided/AI-draft setup, local avatar colours, a profile-scoped edit PIN,
+shared Watch Next shelves and local-time wallpaper scenes. It preserves the existing Home choices
+on upgrade. The public full APK is **669,247 bytes**, SHA-256
+`ac4b93e213aabc4d243b7c163959712e7cf7da57536535e814d75591ac1b60cc`. The personalized pilot is **672,331 bytes**, SHA-256
+`8148224b90fc07ae82fd1424f39590f68dec82737f920d14cdfcad764e710a22`. Both pass **449 JVM tests** and zero-error lint.
+The reference APK is **588,815 bytes**, SHA-256 `74d85869c030b51724725bac66ad38af1741daa6f24ee52268a79360ebdfce8e`,
+with **392 JVM tests**, zero-error lint and the unchanged **589,824-byte** gate.
+**35 desktop product tests** pass. Safety scripts, CI, the reference manifest and the gate are unchanged.
+
+Sony BRAVIA 4K VH2 / Android 12 and Google TV Streamer / Android 14 were updated through their
+existing owner-authorized identity and signing certificate. Fresh private baselines and recovery APKs
+preceded the first update. Functional checks used disposable profiles rather than editing daily Home:
+
+- Guided browsing/Back/Cancel and staged AI-draft cancellation wrote no Home choices or history.
+  Explicit Apply created a separate profile with the same eight-app order. The final onboarding
+  regression filters missing starter apps, rechecks availability at Apply and preserves visible order.
+- The local avatar picker opened, focused the current profile and returned without writes. Colour
+  settings remain scoped and participate in saved setups; they do not read accounts or photos.
+- A disposable PIN rejected a wrong entry, accepted the correct one and blocked desktop layout edits
+  while locked. Keyboard Next/Done and cancellation guards were corrected. No real owner PIN was set.
+  Five-minute expiry/profile-change guards are implemented; full physical idle/timeout acceptance remains.
+- Native scene editing applied an all-week local-time window, using a fixture that changed only the
+  time-picker draft, **not the TV clock**. The scheduled background used one wallpaper decoder,
+  released it after an on-screen Netflix tile launch and resumed one on Home. Weekly overlap,
+  midnight boundaries, missing assets and recovery of old setups are covered by JVM tests.
+- The owner explicitly approved READ_TV_LISTINGS on both devices. Each native browser displayed
+  **one usable shared item**. Counts, permission status and focus metadata were recorded; programme
+  titles, deep-link URLs and viewing progress were not exported or put in screenshots/logs.
+- Real inline rows were checked in top and bottom app positions: vertical movement entered the row,
+  the reverse direction returned to apps, horizontal edges stayed in the row and wallpaper decoding
+  stayed at one. The harness explicitly left touch-input mode before asserting D-pad focus.
+- Every disposable profile was removed. Final setup browsing/cancellation and protected-state checks
+  run on the final build. Daily favorites, app placement, wallpaper/media hashes, named setups,
+  Home/helper selection, density, screen size, screensaver, timeout and disabled packages are preserved.
+  Shelves remain off in daily profiles; the approved Android permission remains granted.
+
+These were injected D-pad/native-dialog checks, **not physical-remote or protected-video playback
+acceptance**. Boot/standby, largest fonts, RTL, long-term timing and broader models still need checks.
+No reboot, force-stop, new helper, system debloat operation or debugging shutdown was performed.
+Under rapid injected Home/settings sequences, the Streamer's direct MainActivity utility shortcut
+could return to Home; the visible Launcher settings button worked. That utility/redirect timing path
+needs separate investigation before all entry points can be called accepted. Actual app checks use
+on-screen tiles; a shell launch command alone is not evidence of working playback.
+
+The functional passes spanned alpha-9 pilot updates. The final hardening changes (recovery replacement
+semantics and missing starter-app filtering) have explicit JVM coverage plus final no-write/preservation
+smoke checks. Public weather-header packaging remains separate from the private pilots' existing bridge.
+The broader Windows CLI harness is not claimed passing: its fake python.exe fixture limitation remains
+recorded in the previous phase. No safety test/script was weakened to hide that environment issue.
+
+The independent [webOS preview](../platforms/webos/LAUNCHER.md) passes **40** policy/storage/public-service
+checks with mocks and a browser review/Back flow. LG CLI **3.2.6** reports no packaging validation
+problems and builds an **9,944-byte** manual-launch IPK (no private media), SHA-256
+`7659d0a7d034c254f6389db9137b5d8ca8768574142647f436ab19d630f52900`. The manifest declares only the two public Application Manager ACG groups.
+No LG was contacted, installed, restarted or put into Developer Mode. Full model/firmware inventory,
+real public-service access, remotes, playback and lifecycle acceptance are still required. The Android
+PIN, weather, shelves and timed scenes are not claimed ported to webOS.
+
 ## Home experiences — 28 October 2026
 
 Alpha 8 adds opt-in Glass, Clean and Cinema presentations, a navigable 20-second preview, local app

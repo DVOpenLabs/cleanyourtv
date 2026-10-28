@@ -1,5 +1,13 @@
 # Integration roadmap
 
+**28 October alpha-9 work:** Guided remote setup and bounded AI-draft review, local avatar colours,
+a profile-specific layout-edit PIN, opt-in searchable Watch Next shelves and local-time wallpaper scenes
+are implemented in Android. The first independent manual-launch webOS runtime/profile adapter is
+source-tested and packaged, with LG hardware acceptance pending. It does not intercept Home.
+[AI setup](AI-SETUP.md), [Android controls](ANDROID-COMMUNITY.md#guided-setup-profiles-and-content-alpha-9)
+and [webOS capabilities](../platforms/webos/LAUNCHER.md) describe exact limits. Paid AI inference,
+account/profile access security, automatic person/profile switching and LG feature parity are separate.
+
 **28 October alpha-8 work:** Three opt-in native Home experiences and the visual Settings illustration
 are implemented; the existing layout remains selected on upgrade. Shared local app search works in the
 new presentations and category view. Sony/Streamer automated checks and remaining physical acceptance
