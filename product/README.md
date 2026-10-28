@@ -1,8 +1,15 @@
-# Unified Home development
+# DV Freedom Launcher
 
-This is the product integration branch of [DVOpenLabs/cleanyourtv](https://github.com/DVOpenLabs/cleanyourtv),
+**Your TV. Your way.**
+
+DV Freedom Launcher is developed on the product integration branch of [DVOpenLabs/cleanyourtv](https://github.com/DVOpenLabs/cleanyourtv),
 derived from [Gathin23/cleanyourtv](https://github.com/Gathin23/cleanyourtv). It is an independent development
 build, not an official upstream release or an LG or Apple product.
+
+The full Android build uses the DV Freedom Launcher name in the system app list, settings and About.
+About → Credits and licence retains the upstream MIT notice. Branding changes keep the existing
+package/signing/data identity, so an update preserves profiles, wallpapers and Home/helper selections.
+The GitHub fork name and the reference build remain unchanged; the original licence/attribution is retained.
 
 The goal is one maintained repository with Android and LG webOS implementations, consistent settings,
 local profiles and media formats. Platform-specific Home handling and builds remain separate. The current

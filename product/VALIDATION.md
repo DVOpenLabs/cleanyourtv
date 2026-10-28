@@ -1,5 +1,25 @@
 # Local integration checks
 
+## DV Freedom Launcher branding — 27 October 2026
+
+The full product now uses the selected **DV Freedom Launcher** name in its application label,
+settings breadcrumb, About page and Home-only helper description. About includes the original Gathin
+MIT notice and source credits. The reference build, package/component IDs, signing identity and
+Home/helper behavior are unchanged. The public fork keeps its existing repository URL.
+
+Both release builds pass 416 existing JVM tests and lint with zero errors. Public APK: **627,307 bytes**,
+SHA-256 `838b2292e757c13ece907b1a3529b012e07fcc677fb23e6824638155ef28de03` (123 warnings, 235 information).
+Personalized pilot: **628,999 bytes**, SHA-256 `7a20d01b68164ffabb1ca3001a8bcd3eaafe2de0139a2df6660fd27de19e82ce`
+(129 warnings, 241 information). Both compiled application labels were inspected before deployment.
+
+Native Sony and Streamer checks opened the renamed settings, About/tagline and full MIT credits,
+then returned through Home. Owner preferences/history/profiles, favorites/position, app cards and
+wallpaper dimming matched their saved pre-branding states. The protected Home/helper, display,
+ADB, screensaver, boot count, package set, UID and configuration/media/recovery checks passed.
+No temporary test profiles, settings changes or media replacement were required. On Sony, the first
+test expected the settings root but found its remembered Appearance page; returning one level and
+rerunning the checks passed. Branding is not a new acceptance claim for physical remotes or playback.
+
 ## Full native community features — 27 October 2026
 
 See [the feature contract](ANDROID-COMMUNITY.md) and [expanded Projectivy review](PROJECTIVY-REVIEW.md).
