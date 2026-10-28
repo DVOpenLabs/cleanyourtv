@@ -4,10 +4,10 @@
 
 Alpha 8 adds opt-in Glass, Clean and Cinema presentations, a navigable 20-second preview, local app
 search shared with category Home, and a still-only Settings illustration. The existing layout stays
-selected on upgrade. The public full build is **644,631 bytes**, SHA-256
-`f7558c2ecb0aebceeebb8085f824f0f21e616b22804230b1d5ed671cac16ba61`.
-The personalized pilot is **646,615 bytes**, SHA-256
-`a2bc5b6ed2160517b95a8bf3bbd633d9b6375ee15551d96807a7bcc551b3b65a`.
+selected on upgrade. The public full build is **644,767 bytes**, SHA-256
+`2ad533ee75880029ed197a5293e8d4d7e282fac355875d5fb7a0dee143965334`.
+The personalized pilot is **646,783 bytes**, SHA-256
+`5767ee1031ad1dfeaba34dc6c63f3d2d01073fc2b789cd5dc0e6f63985a6e151`.
 Both pass **431 JVM tests** and lint with zero errors. The reference build passes **392 JVM tests**,
 zero lint errors and its unchanged size gate at **588,583 bytes**. Its SHA-256 is
 `be8c2ee799ed56ac0d71ddd6470d8edef28134e4a81ffce481ec47f8c6757a3b`.
@@ -26,6 +26,8 @@ owner-authorized pilot identity. Each functional pass used a temporary native la
   These are launch/lifecycle checks, not evidence of protected-content playback.
 - Both daily profiles were restored and temporary profiles removed. Final no-save checks cover the
   Settings illustration, native preview, edit-surface guard and Revert on the final build.
+- The final card frame has separate light/dark strokes outside the clipped artwork. White Netflix
+  artwork and a dark app card were captured with the selection visible in isolated profile checks.
 - Selected Home/helper, display size/density, ADB, screensaver/timeout, disabled-package list, boot count
   and external configuration/media hashes matched fresh pre-update baselines. No reboot, force-stop,
   package uninstall, helper reassignment or system preference write was used.
