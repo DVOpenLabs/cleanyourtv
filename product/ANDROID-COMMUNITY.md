@@ -93,6 +93,41 @@ cannot be recovered. If storage prevents staging a checkpoint, the original edit
 without a history entry. Native normal restore has been tested; power-loss/disk-failure injection has
 not been device accepted.
 
+## Home experiences (alpha 8)
+
+Settings → Home experience previews three native presentations of the same Home state:
+
+- **Freedom Glass:** compact header and a floating dock.
+- **Freedom Clean:** an open app row with solid, readable names.
+- **Freedom Cinema:** a quieter app ribbon and a title for the focused app.
+
+The existing grid/category layout remains the default. Preview is process-local and returns to Settings
+after 20 seconds unless Keep is chosen. Revert, Back or leaving a preview discards it. The preview bar
+allows D-pad navigation through the real apps; Up returns to Revert/Keep. Keep saves only the profile's
+experience choice and change metadata, preserving its app ordering, media and other appearance choices.
+Settings, profile management and app customization wait until the trial is kept or reverted; trying a
+look does not grant its edit surfaces access to the saved Home. App launches remain available.
+The selection also participates in saved setups and automatic recovery.
+
+An explicit Top/Middle/Bottom choice is shared between experiences. Without one, Clean starts at the top
+and Glass/Cinema at the bottom; this does not write a new position. Apps per row and extra spacing remain
+available. Controls belonging only to the legacy grid are omitted while a new experience is selected.
+Switching to Current layout restores access to those controls and its saved appearance.
+
+Names use solid ink, never outlined letters. Automatic ink uses a still poster's header/app region and
+supporting shading; it does not alternate colors on every video frame. Manual light/dark choices remain
+available. Focus surrounds the selected card. Settings includes a bounded still illustration, not a second
+wallpaper video. The optional playlist uses the same resumed-Home timer and one active decoder.
+
+Inputs retains the existing passthrough/HDMI filtering and device-specific fallback. Apps opens local
+label/package search over the shared visible catalog; it does not query viewing history or an online
+content service. The internal experience screen is not another installed launcher or Home helper.
+
+`product/experience-preview/` contains a desktop design review. Its weather, app launches and system
+actions are simulated; its optional `/media/` routes must be supplied by a local development server.
+Private artwork and videos are deliberately absent from this repository. The existing owner pilot's
+weather bridge is separate from the public product's still-pending weather-header packaging.
+
 ## Building and compatibility
 
 From `launcher/`, build the full feature set with the existing Android SDK and JDK:

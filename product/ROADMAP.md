@@ -1,5 +1,12 @@
 # Integration roadmap
 
+**28 October alpha-8 work:** Three opt-in native Home experiences and the visual Settings illustration
+are implemented; the existing layout remains selected on upgrade. Shared local app search works in the
+new presentations and category view. Sony/Streamer automated checks and remaining physical acceptance
+are recorded in [validation](VALIDATION.md). Content shelves,
+profile avatars/lock/schedules, structured AI setup and LG runtime integration remain later phases; these
+are not implied by selecting a Home experience.
+
 **27 October alpha-6 update:** The [full native community build](ANDROID-COMMUNITY.md) implements
 Projectivy-inspired nested settings, opt-in named app rows, independent text-size previews, native
 app customization, visual local wallpaper/theme browsers and automatic recent-change recovery.

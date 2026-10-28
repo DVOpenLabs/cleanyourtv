@@ -18,6 +18,8 @@ Android launcher lives in `launcher/`. The first webOS recovery patch/source lay
 
 ## What exists now
 
+- Alpha 8 [Home experiences](ANDROID-COMMUNITY.md#home-experiences-alpha-8): Glass, Clean and Cinema,
+  with a navigable 20-second preview, explicit Keep/Revert, shared app/media stores and local app search.
 - The optional [full native feature build](ANDROID-COMMUNITY.md): nested settings, category rows, text-size
   previews, on-TV app artwork/name editing, visual wallpaper browsing and bounded automatic recovery.
 - Native Android style preview, timed Revert and scoped Undo, inherited from the tested Sony prototype.

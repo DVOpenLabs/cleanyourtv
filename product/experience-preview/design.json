@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "canvas": {"width": 960, "height": 540, "safe": 40},
+  "colors": {"ink": "#f5f7fa", "darkInk": "#15202e", "secondary": "#d4dce7", "panel": "#111820", "glass": "#263342", "focus": "#e5f3ff", "accent": "#a8d7ff"},
+  "type": {"family": "Outfit", "clock": 40, "header": 14, "appName": 15, "hero": 48, "settingsTitle": 30, "settingsRow": 18},
+  "motion": {"focusMs": 150, "pressMs": 90, "panelMs": 180, "focusedScale": 1.07},
+  "looks": [
+    {"id": "glass", "name": "Freedom Glass", "description": "A floating dock with soft depth and compact controls.", "position": "bottom", "cardWidth": 94, "cardRadius": 12},
+    {"id": "clean", "name": "Freedom Clean", "description": "Your apps, clearly arranged. Everything you need in reach.", "position": "top", "cardWidth": 94, "cardRadius": 9},
+    {"id": "cinema", "name": "Freedom Cinema", "description": "Room for your wallpaper with a quiet, focused app ribbon.", "position": "bottom", "cardWidth": 84, "cardRadius": 10}
+  ],
+  "principles": [
+    "One shared Home state and media player; a look changes presentation only.",
+    "Honor manual ink choices. Automatic uses stable wallpaper-region contrast with gentle shading.",
+    "No outlined letters or individual label plates. Focus surrounds the selected app card.",
+    "All eight selected apps can fit. Top, middle and bottom remain available.",
+    "No invented viewing progress, recommendations, live weather or account switching.",
+    "Every remote direction has a clear destination; Back closes the current surface first.",
+    "The existing layout remains selected until an experience is explicitly applied."
+  ]
+}

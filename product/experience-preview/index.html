@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DV Freedom Launcher — Home experiences</title>
+  <link rel="stylesheet" href="preview.css"><script defer src="preview.js"></script>
+</head>
+<body>
+<header class="review-header"><div><strong>DV Freedom Launcher</strong><p>Home experiences</p></div><span class="preview-note">Desktop design preview · TV settings stay untouched</span></header>
+<main>
+  <section class="review-toolbar" aria-label="Preview options">
+    <div class="look-picker" role="group" aria-label="Home experience">
+      <button data-look="glass" aria-pressed="true">Freedom Glass</button><button data-look="clean" aria-pressed="false">Freedom Clean</button><button data-look="cinema" aria-pressed="false">Freedom Cinema</button>
+    </div>
+    <div class="preview-fields"><label>Apps <select id="device"><option value="sony">Sony selection</option><option value="streamer">Streamer selection</option></select></label><label>Wallpaper <select id="wallpaper"><option value="luffy">Luffy</option><option value="pokemon">Pokémon</option><option value="solo">Solo Leveling</option><option value="demon">Demon Slayer</option><option value="dragon">Dragon Ball</option><option value="light">Light test</option><option value="dark">Dark test</option></select></label><label class="check"><input type="checkbox" id="animate"> Play wallpaper</label></div>
+  </section>
+  <section class="tv-frame" aria-label="Interactive TV Home preview">
+    <div id="scene" class="scene" data-look="glass" data-position="bottom">
+      <div class="wallpaper"><img id="poster" alt=""><video id="video" muted loop playsinline preload="none" aria-hidden="true"></video></div>
+      <div class="top-shade"></div><div class="bottom-shade"></div>
+      <header class="home-header">
+        <div class="home-info"><span id="home-greeting">Good evening</span><div class="time-line"><time id="clock">8:42</time><span id="period">PM</span><div class="date-weather"><span id="date">Wednesday 28 October</span><button id="weather"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg> <span>59°F / 15°C</span></button></div></div></div>
+        <nav class="home-controls" aria-label="Home controls"><button id="inputs" class="home-control" aria-label="Inputs"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v7l-3 3v8h-4v-8l-3-3zM10 3v4m4-4v4"/></svg><span>Inputs</span></button><button id="search" class="home-control" aria-label="All apps"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><span>Apps</span></button><button id="settings" class="home-control" aria-label="Launcher settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2 3 4-1 1 4 3 2-2 3 1 4-4 1-2 3-3-2-4 1-1-4-3-2 2-3-1-4 4-1z"/><circle cx="12" cy="12" r="3"/></svg><span>Launcher settings</span></button><button id="profiles" class="avatar" aria-label="Launcher profiles">DV</button></nav>
+      </header>
+      <div class="hero" aria-hidden="true"><p>Your next app</p><h1 id="hero-name">StbEmu Pro</h1><span>Press OK to open</span></div>
+      <div id="dock-shell" class="dock-shell"><div class="dock-material"></div><div id="apps" class="apps" role="group" aria-label="Favorite apps"></div></div>
+      <div id="selected-caption" class="selected-caption" aria-live="polite"></div>
+      <div id="overlay" class="overlay" hidden></div><div id="toast" class="toast" role="status" hidden></div>
+    </div>
+  </section>
+  <footer class="review-footer"><p id="look-description"></p><p>Arrow keys move focus · Enter selects · Escape returns. App launches, weather and TV inputs are simulated here.</p></footer>
+</main>
+</body></html>

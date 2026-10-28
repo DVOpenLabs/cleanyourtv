@@ -1,5 +1,52 @@
 # Local integration checks
 
+## Home experiences — 28 October 2026
+
+Alpha 8 adds opt-in Glass, Clean and Cinema presentations, a navigable 20-second preview, local app
+search shared with category Home, and a still-only Settings illustration. The existing layout stays
+selected on upgrade. The public full build is **644,631 bytes**, SHA-256
+`f7558c2ecb0aebceeebb8085f824f0f21e616b22804230b1d5ed671cac16ba61`.
+The personalized pilot is **646,615 bytes**, SHA-256
+`a2bc5b6ed2160517b95a8bf3bbd633d9b6375ee15551d96807a7bcc551b3b65a`.
+Both pass **431 JVM tests** and lint with zero errors. The reference build passes **392 JVM tests**,
+zero lint errors and its unchanged size gate at **588,583 bytes**. Its SHA-256 is
+`be8c2ee799ed56ac0d71ddd6470d8edef28134e4a81ffce481ec47f8c6757a3b`.
+No runtime dependency, permission, service or CI/workflow change was introduced. The new internal
+experience activity is not exported and does not become a second installed Home package.
+
+Sony BRAVIA 4K VH2 / Android 12 and Google TV Streamer / Android 14 were tested through the existing
+owner-authorized pilot identity. Each functional pass used a temporary native launcher profile:
+
+- Preview/Revert and an actual 20-second expiry left saved preferences/history unchanged.
+- Keep saved only the experience preference plus change metadata. The eight selected apps retained
+  their order; saved position and media choices were unchanged.
+- All three presentations rendered; injected D-pad navigation reached the eight apps and stopped at
+  horizontal edges. Inputs/fallback, launcher Settings, local app-search opening and Back worked.
+- One playlist decoder was allocated on Home, released when Netflix opened, and resumed on Home.
+  These are launch/lifecycle checks, not evidence of protected-content playback.
+- Both daily profiles were restored and temporary profiles removed. Final no-save checks cover the
+  Settings illustration, native preview, edit-surface guard and Revert on the final build.
+- Selected Home/helper, display size/density, ADB, screensaver/timeout, disabled-package list, boot count
+  and external configuration/media hashes matched fresh pre-update baselines. No reboot, force-stop,
+  package uninstall, helper reassignment or system preference write was used.
+
+The Settings shortcut regression found during testing was fixed: the legacy Home activity no longer
+recreates over a requested settings surface after the experience changes. The Streamer's system Settings
+app tile is distinct from the header's explicitly named **Launcher settings** action.
+
+The **28 product/editor Python tests** pass. The broader repository CLI suite was attempted but does
+not have a clean Windows result: existing mock-device fixtures create a text file named `python.exe`,
+which Windows refuses to execute. An isolated failure reproduces this and the fixture/safety-script
+bytes match the previous commit. The broad run was stopped; this is not a claim of full Linux CI
+acceptance. No safety tool or test was edited to hide the limitation.
+
+Real remote buttons, sofa-distance readability, largest fonts/RTL, cold process/boot/standby handling,
+casting, actual streaming playback and broad performance/model acceptance remain pending. Geometry,
+manual/automatic ink, extra spacing and RTL horizontal-policy checks are JVM tested; not every native
+position/font/theme combination was device accepted. The standard public package was built but the
+devices retained their existing pilot package. Private screenshots, media and recovery APKs are excluded
+from the repository. AI/content shelves and native LG integration are not part of this alpha.
+
 ## Wallpaper playlists — 27 October 2026
 
 The full build adds an off-by-default, profile-specific local-background playlist. See
