@@ -1,6 +1,6 @@
 # Guided and AI-assisted setup
 
-Launcher settings → **Setup help** offers an optional remote-control wizard. Choose a Home look,
+Launcher settings → Appearance → **Setup help** offers an optional remote-control wizard. Choose a Home look,
 favorite apps, position and readability preferences, then review the draft. Back and Cancel save
 nothing. Apply defaults to a **new local profile**, so the previous Home remains available.
 This does not create or switch accounts inside streaming apps.
@@ -12,7 +12,7 @@ wallpaper files, viewing history and TV account information are not included in 
 
 ## Use your assistant
 
-1. Open Setup help → AI setup help to copy the prompt or export a template using Android’s file picker.
+1. Open Appearance → Setup help → AI setup help to copy the prompt or export a template using Android’s file picker.
    Some TVs have no file picker; the desktop tool below is an alternative with authorized debugging.
 2. Ask the assistant what you want your Home to feel like. Supply only the template/inventory you
    choose to share. Exact installed app IDs are required; omit `favorites` to retain the current order.

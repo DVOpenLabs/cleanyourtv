@@ -1,5 +1,54 @@
 # Local integration checks
 
+## Named icon sizes and settings redesign — 28 October 2026
+
+Alpha 11 adds profile-scoped Current/Small/Medium/Large icon sizes and puts App spacing next to them
+in Appearance → Layout. Alpha 12 refines the settings hierarchy and typography, consolidates the rail
+to seven sections, restores initial D-pad focus, adds complete Info/hold-OK help and reserves contextual
+still previews for visual settings. It also adds a guarded native favourite-order draft for Clean,
+Glass and Cinema and fixes their focus-style reader to use the stored named style.
+
+The public full APK is **689,279 bytes**, SHA-256
+`14cc01410a3943efcd798afdccb5f4e2beaf529dc8bb5a15a4cb1cb047fdbf19`. The personalised pilot is **692,195 bytes**, SHA-256
+`a89a57f376f6e1b74a76114e8763346785fdcee862cebc0e012761b5045e5d66`. Both pass **465 JVM tests** and zero-error lint. The reference
+build passes **392 JVM tests**, zero-error lint and the unchanged **589,824-byte** gate at
+**588,811 bytes**, SHA-256 `8c3f9cca8d3cfb8450dc33ce5ce42c1136fa14a6b8f5ba9c432e754fa66d15b2`.
+The new main-source tile-width calls compile to no-ops in the reference build. **35 desktop product
+tests** pass. No runtime dependency, permission, service, telemetry or network client was added.
+
+Fresh private baselines preceded the owner-authorised in-place updates on Sony BRAVIA 4K VH2 /
+Android 12 and Google TV Streamer / Android 14. The Streamer’s selected Clean presentation was captured
+and retained; Sony retained its existing classic presentation. Size tests used temporary profiles:
+
+- Small, Medium and Large produced strictly increasing actual artwork widths, with identical app
+  membership/order. Cancel preserved the original dimensions and preferences. Reopening retained
+  the saved preset. Spacing drafted without writes and applied independently of size.
+- The three size renderers are wired through the existing classic/grid, category and experience
+  geometry. JVM checks cover every new-style position, one to eight apps and supported gaps. Native
+  size measurements cover the Sony classic renderer and Streamer Clean renderer; category and all
+  presentation combinations are not claimed fully device accepted.
+- Every size-test profile was removed and actual daily icon dimensions, preferences, layout and
+  protected TV state restored. The still-preview aspect-ratio refinement is included in the later
+  settings pass.
+
+Native settings checks passed on both devices: all seven sections, visible initial focus,
+size/spacing discoverability, full Info help, Cancel without writes, Home-style and guided-setup
+access, and the local HDMI search route. Disposable Clean profiles verified the named Strong outline
+and favourite-order Cancel/Apply, including actual rendered order and retained labels/hidden apps.
+The editor list now scrolls inside a bounded viewport so Apply/Cancel stay visible; moving an app
+retains focus on the move direction. Final editor-entry focus was checked on the Streamer after the
+last focus-only refinement. Every temporary profile was removed. Final installed APK hashes match
+the tested pilot above; daily profile values, layout, wallpapers and protected TV state match their
+fresh baselines. ADB remains enabled at the owner's request.
+
+Skill review used the native interface checklist and Android TV D-pad guidance. Its generic design
+search returned web landing-page suggestions, which were not adopted. Native captures were reviewed
+for hierarchy, focus, density, icon consistency and modal readability. Short-screen/large-font
+preview suppression and move bounds have JVM coverage; full largest-font, RTL, physical held-button,
+protected playback and longer-term hardware checks remain owner acceptance tasks. This pass adds no
+LG hardware interaction. CI, safety scripts, APK size limit and protected-package policy are unchanged.
+Screenshots, recovery APKs, app inventories, device identifiers, locations and personal media stay private.
+
 ## Settings layout and readability — 28 October 2026
 
 Alpha 10 adds persistent category navigation, aligned icon/name/value rows, explicit Outfit weights

@@ -7,22 +7,34 @@ are independent. See [validation](VALIDATION.md) for dated device results and re
 
 ## Settings that work with a remote
 
-Alpha 10 keeps a compact category sidebar visible while the wider controls panel shows Appearance,
-Apps & rows, Wallpaper, Profiles, Remotes & inputs, Backup & restore and System. Setup help and Home
-experience are also directly reachable. Icons, semibold headings, regular-weight body text and readable
-current values use Outfit with the existing locale fallback. Focus has a strong border; the active
-category has a quieter saved-selection treatment. There are no outlined text labels.
+Alpha 12 uses a seven-section rail: Appearance, Apps & rows, Wallpaper, Profiles, Remotes & inputs,
+Backup & restore and System. Appearance brings Home experience, Layout, Text & clock, Focus & motion
+and Setup help together. All sections fit the ordinary TV viewport; controls and contextual help use
+the remaining width instead of a large empty page and tiny footer illustrations.
 
-Rows align their icon, name, current value and action affordance. Selected help and light/dark still
-illustrations stay below the scrollable controls. The profile name is always visible; shared input,
-remote and system controls are marked separately. These illustrations show layout/spacing, never run
-another video decoder and do not establish contrast for every frame of a moving wallpaper.
+Outfit uses regular body text, medium controls and semibold headings with the existing locale fallback.
+Shared palette resources, consistent outline icons and stable focus bounds define the presentation.
+The initial remote focus is restored when the window gains focus. Saved selections stay quieter than
+focused controls. No Home preference changes just by updating or browsing the settings.
+
+Rows align icons, names, current values and actions. A context panel explains the selected control and
+shows bounded dark/light still illustrations for visual settings. Larger font scales and short screens
+prioritize readable help over illustrations. Hold OK or press Info for the complete description.
+The profile name remains visible and shared controls are identified separately. Illustrations do not
+open a video decoder or establish contrast for every moving wallpaper frame.
 
 **Search settings** searches local labels, help and category paths, including aliases such as HDMI for
 Inputs and font for Text sizes. Queries are limited to 120 characters and results to 24. A result opens
 the owning section and focuses its control; it never executes that control or stores search history.
 
-**App position**, **Apps per row**, **Rows below favorites**, **Favorites background** and **Extra tile
+**Icon size** is now beside **App spacing** under **Appearance → Layout**. Preview Current, Small,
+Medium or Large before Apply. Current preserves the exact existing theme dimensions; the named sizes
+scale banners and icons within the safe row width. App order, apps per row, display density and
+wallpaper stay unchanged. Large is the largest size allowed by the row; fewer apps per row allows
+larger tiles. The choice is per profile and included in saved setups and recovery. The still preview
+keeps its TV aspect ratio and never plays or replaces the wallpaper.
+
+**App position**, **Apps per row**, **Rows below favorites**, **Favorites background** and **App
 spacing** use labelled segmented choices where applicable. Left/Right changes the local draft; OK
 confirms it. A check denotes the saved choice, while the brighter chip is the preview. An inherited
 position is labelled as following configuration rather than falsely marking Top as saved. Position
@@ -42,6 +54,13 @@ four choices visible for each control instead of opening another picker. Apply s
 the current profile; Cancel keeps its previous sizes. Theme sizes removes the override. Existing app-name
 visibility and solid light/dark/automatic theme text remain available. Automatic contrast follows theme
 configuration, not every changing video frame; test busy wallpapers from the seating position.
+
+**Arrange apps** now opens a native favourite-order draft from Clean, Glass and Cinema. Move up/down
+buttons work with the remote; Cancel discards the draft and Apply saves only the current profile. The
+editor preserves labels, hidden apps, artwork and media. It uses the existing bounded layout store,
+checks the profile/preferences/native order stamp and edit lock again before saving, invalidates stale
+Undo and notifies layout observers. Classic and category layouts retain their existing editors.
+The three new styles now read the named focus style correctly, including Strong black and white.
 
 ## Optional category rows
 
@@ -120,7 +139,7 @@ not been device accepted.
 
 ## Home experiences (alpha 8)
 
-Settings → Home experience previews three native presentations of the same Home state:
+Settings → Appearance → Home experience previews three native presentations of the same Home state:
 
 - **Freedom Glass:** compact header and a floating dock.
 - **Freedom Clean:** an open app row with solid, readable names.

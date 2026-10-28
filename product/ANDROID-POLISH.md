@@ -18,7 +18,7 @@ These options are off on an unconfigured upgrade. They are profile-scoped and in
 
 ## Profiles created on the TV
 
-Open **Launcher settings → Apps & profiles → Launcher profiles → Create profile from current Home**. Enter a name using the native keyboard. Creation copies the current Home's app layout and appearance, without switching away from it. Switch through the profile menu or Quick actions; **Current layout** retains the owner's original Home.
+Open **Launcher settings → Profiles → Launcher profiles → Create profile from current Home**. Enter a name using the native keyboard. Creation copies the current Home's app layout and appearance, without switching away from it. Switch through the profile menu or Quick actions; **Current layout** retains the owner's original Home.
 
 Up to 16 imported and locally created profiles can coexist. Locally created entries can be renamed or deleted through **Manage created profiles**; deleting the active entry returns to Current layout. Imported libraries remain separate and cannot silently overwrite local IDs. A new profile does not inherit consent to remember recently opened apps or another profile's recent history. Profiles do not provide app locks or parental controls.
 
@@ -34,21 +34,40 @@ A restore point contains an allowlist of launcher appearance/app choices. Restor
 
 ## Keeping the package small
 
-The unchanged APK ceiling is 589,824 bytes. This branch runs the SDK's existing `aapt2 optimize --collapse-resource-names` against the shrunk release resource archive before ordinary packaging/signing. It retains all view-ID names and runtime `banner_*` drawable names; font files and locale/density variants are retained. No signing or SDK floor change is involved. See [AAPT2](https://developer.android.com/tools/aapt2).
+The reference build keeps its unchanged 589,824-byte APK ceiling; the opt-in full product is measured separately in the dated validation record. This branch runs the SDK's existing `aapt2 optimize --collapse-resource-names` against the shrunk release resource archive before ordinary packaging/signing. It retains all view-ID names and runtime `banner_*` drawable names; font files and locale/density variants are retained. No signing or SDK floor change is involved. See [AAPT2](https://developer.android.com/tools/aapt2).
 
 The task integration targets this repository's pinned AGP 8.5.2 / build-tools 34.0.0 paths. It fails if its expected resource archive or symbols are missing; revalidate it when upgrading AGP. Preserve both R8 mapping and resource-ID symbols privately alongside each tested artifact. The dated [validation record](VALIDATION.md) distinguishes local checks, native trial evidence and remaining owner acceptance.
 
 ## Settings presentation
 
-The alpha-10 native settings menu keeps a compact category sidebar and a wider controls panel. Rows
-align icons, names, current values and chevrons; the footer explains the selected control. Outfit uses
-explicit regular/semibold weights with the existing locale fallback. A strong border identifies focus,
-separately from the active category or saved option. Position, row size and spacing offer local drafts,
-and text sizes keeps its preview/Apply contract. Local alias search navigates without executing an
-action. See the [current settings contract](ANDROID-COMMUNITY.md#settings-that-work-with-a-remote).
-Settings uses opaque neutral surfaces so its readability is independent of the wallpaper. There is no
-new UI framework, runtime dependency, network access, background task or stored search history.
+The alpha-12 native settings menu has seven clear sections beside a controls list and contextual
+inspector. Current values stay in aligned rows. Typography uses explicit regular/medium/semibold
+weights, shared palette resources and a single outline-icon style. Initial focus is restored when
+the window gains focus. Full descriptions are available with Info or hold OK. Size and spacing share
+one Layout page; styles and guided setup live together under Appearance. The new-style order editor
+preserves the moving app and Move up/down direction while editing a draft. See the
+[current settings contract](ANDROID-COMMUNITY.md#settings-that-work-with-a-remote) and audit below.
 
 This is an independent implementation informed by [Projectivy’s feature overview](https://github.com/spocky/miproja1), its [developer-published screenshots](https://play.google.com/store/apps/details?id=com.spocky.projengmenu), and a [published settings capture](https://quantrimang.com/dung-projectivy-launcher-tren-google-tv-210954). No Projectivy code or artwork is bundled. This fork does not claim its full feature set.
 
 The subsequent [REA APK review](PROJECTIVY-REVIEW.md) records the actual static inspection and its limits. Home appearance now offers **Home text** (original, automatic, light or dark ink) and **App names** (follow theme, all, selected only or hidden). These choices belong to the active profile and saved setups. The context pane explains focused controls, and section re-entry returns to the last focused row during that settings session. Existing choices are preserved on upgrade.
+
+## Settings design review (alpha 12)
+
+The native-TV audit found oversized empty regions, a rail with setup actions mixed into navigation,
+small repeated previews, mixed filled/outline icons and too much semibold text. The revised direction
+uses one Outfit family (regular body, medium controls, semibold headings), 8dp spacing, a seven-section
+rail, scrollable controls and a contextual inspector. Canvas `#101923`, rail `#182534`, panel `#192B3C`,
+text `#F5F7FA`, secondary `#C2CDDB` and accent `#BDE3FF` are shared semantic resources. Stable focus
+bounds and the existing light outline remain the main interaction cue.
+
+Appearance exposes Home experience, Layout, Text & clock, Focus & motion and Setup help. Size and
+spacing stay together in Layout. Contextual still illustrations are reserved for visual settings;
+shared controls identify their profile scope. Long-press OK or Info opens the complete description
+instead of forcing paragraphs into each row. Search, Apply/Cancel, Keep/Revert and existing save
+handlers keep their established contracts. No TV configuration or Home preference changes on upgrade.
+
+The skill's generic design-system search returned a web operations landing page twice; that was not
+adopted. The native interaction checklist and [Android TV navigation guidance](https://developer.android.com/design/ui/tv/guides/foundations/navigation-on-tv)
+provide the relevant basis. This pass makes existing capabilities discoverable rather than claiming
+new content integrations, provider AI or native LG hardware support.

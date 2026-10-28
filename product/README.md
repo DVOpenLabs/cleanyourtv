@@ -19,6 +19,12 @@ still-pending LG hardware acceptance. The optional Home helper remains a separat
 
 ## What exists now
 
+- Alpha 12 [settings polish](ANDROID-POLISH.md#settings-design-review-alpha-12): seven clear sections,
+  contextual previews, readable help, matching icons/typography and a native order editor for new styles.
+
+- Alpha 11 adds named Small/Medium/Large [icon sizes](ANDROID-COMMUNITY.md#settings-that-work-with-a-remote),
+  with a cancellable preview and App spacing alongside it in Appearance → Layout.
+
 - Alpha 10 settings: persistent category navigation, readable Outfit weights, aligned value rows,
   clear focus, local alias search and previewable position/size/spacing controls. See [settings details](ANDROID-COMMUNITY.md#settings-that-work-with-a-remote).
 
